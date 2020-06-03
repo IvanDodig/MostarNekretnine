@@ -1,0 +1,100 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    font-size: 1.8rem;
+}
+
+.form__login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: space-around;
+    color: rgba(#000, 0.9);
+    padding: 2rem 2rem;
+    width: 40vw;
+    //min-width: 25vw;
+    background-color: #fff;
+    &--heading {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        font-weight: 400;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba($grey-dark, 0.7);
+    }
+
+    &--row {
+        width: 100%;
+
+        input {
+            border: 0;
+            width: 100%;
+            padding: 1rem 0.5rem;
+            margin-bottom: 5vh;
+            border-right: none;
+            border-top: none;
+            border-left: none;
+            border-bottom: 1px solid $grey-light-2;
+            background-color: transparent;
+            outline: none;
+            color: rgba(#000, 0.9);
+            caret-color: rgba(#000, 0.9);
+            transition: all 0.3s;
+        }
+        input:focus {
+            border-bottom: 1px solid $color-tertiary;
+        }
+        input:hover {
+            border-bottom: 1px solid $color-tertiary;
+        }
+    }
+}
+.form__login--bottom {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    .message--1 {
+        font-size: 1.3rem;
+    }
+    .message--2 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        transition: all 0.2s;
+        backface-visibility: hidden;
+    }
+    .message--2:hover {
+        transform: scale(1.05);
+        color: #000;
+    }
+}
+.btn-primary {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    color: $color-tertiary;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.8rem;
+    border: 1px solid $color-tertiary;
+}
+.btn-primary:hover {
+    background-color: rgba($color-tertiary, 0.8);
+    color: $grey-light-1;
+}
+
+//logged in screen
+.logged-in {
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 300;
+}
