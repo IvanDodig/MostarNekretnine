@@ -6071,12 +6071,18 @@ readers do not read off random characters that represent icons */
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  /*  @media only screen and(max-width:$bp-large) {
-      font-size: 50%;
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 55%;
   }
-  @media only screen and(max-width:$bp-small) {
-      font-size: 48%;
-  } */
+}
+
+@media only screen and (max-width: 43.75em) {
+  html {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -6084,7 +6090,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.8);
   background-color: #c5cace54;
 }
 
@@ -6123,7 +6129,8 @@ body {
 main {
   display: grid;
   grid-template-columns: 1fr 3fr;
-  padding: 7rem 5rem;
+  padding: 7rem 7rem;
+  gap: 5rem;
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -6134,7 +6141,7 @@ main {
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #353b48;
 }
 
 .navigation {
@@ -6153,7 +6160,8 @@ a {
 }
 
 .navigation__item {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-size: 1.8rem;
   font-weight: 300;
   padding: 1rem 2rem;
@@ -6187,12 +6195,12 @@ a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 5rem;
+  align-items: center;
 }
 
 .home {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  align-items: center;
 }
 
 .home img {
@@ -6254,7 +6262,7 @@ a {
   justify-content: center;
   align-items: center;
   height: 90vh;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .form__login {
@@ -6262,19 +6270,35 @@ a {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  color: rgba(0, 0, 0, 0.9);
-  padding: 2rem 2rem;
-  width: 40vw;
+  color: rgba(0, 0, 0, 0.8);
+  padding: 1rem 2rem;
+  min-width: 40vw;
+  border: 1px solid #c5cace54;
+  border-top: 4px solid #0097e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
   background-color: #fff;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .form__login {
+    min-width: 50vw;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .form__login {
+    min-width: 70vw;
+  }
 }
 
 .form__login--heading {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
+  font-size: 2.3rem;
+  margin-bottom: 2rem;
   font-weight: 400;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(53, 59, 72, 0.7);
+  border-bottom: 1px solid rgba(53, 59, 72, 0.5);
 }
 
 .form__login--row {
@@ -6307,18 +6331,20 @@ a {
 
 .form__login--bottom {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   flex: 1;
 }
 
 .form__login--bottom .message--1 {
   font-size: 1.3rem;
+  margin-right: 1rem;
 }
 
 .form__login--bottom .message--2 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
   transition: all 0.2s;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -6360,14 +6386,30 @@ a {
 .details {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  padding: 7rem 5rem;
-  gap: 5rem;
+  grid-template-rows: repeat(2, minmax(20rem, 1fr));
+  padding: 7rem 7rem;
+  -moz-column-gap: 5rem;
+       column-gap: 5rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .details {
+    grid-template-rows: repeat(2, minmax(20rem, 50vh));
+    grid-template-columns: 1fr;
+    gap: 5rem;
+  }
 }
 
 .details__left {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .details__left {
+    align-items: center;
+  }
 }
 
 .details__bottom {
@@ -6395,10 +6437,12 @@ a {
 .details__form--login {
   min-width: 30vw;
   background: #fff;
-  border: 1px solid #c5cace54;
-  border-top: 4px solid #0097e6;
-  border-radius: 0.5rem;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 56.25em) {
+  .details__form--login {
+    min-width: 50vw;
+  }
 }
 
 .details__bottom {
@@ -6413,6 +6457,13 @@ a {
   margin: 2rem 0;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .review {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .review__user img {
   border-radius: 50%;
 }
@@ -6423,6 +6474,13 @@ a {
   flex: 0;
   flex-basis: 70%;
   justify-content: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .review__desc {
+    width: 60%;
+    margin-top: 2rem;
+  }
 }
 
 .review__desc--text {
@@ -6490,12 +6548,15 @@ a {
   font-size: 1.4rem;
 }
 
-.footer__up > * {
-  height: 30vh;
+@media only screen and (max-width: 37.5em) {
+  .footer__up {
+    flex-direction: column;
+  }
 }
 
 .footer__up--heading {
-  font-size: 1.6rem;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .footer__up--contact {
@@ -6504,7 +6565,14 @@ a {
   flex: 0;
   flex-basis: 25%;
   justify-content: space-around;
-  align-items: start;
+  align-items: flex-start;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .footer__up--contact {
+    margin-bottom: 3.5rem;
+    font-size: 1.6rem;
+  }
 }
 
 .footer__up--info {
@@ -6517,42 +6585,14 @@ a {
 .footer__up--phone {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  margin-top: 1.5rem;
 }
 
 .footer__up--location i,
 .footer__up--mail i,
 .footer__up--phone i {
-  margin-right: 2rem;
-}
-
-.footer__up--locations {
-  flex: 0;
-  flex-basis: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: start;
-}
-
-.footer__up--streets {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.footer__up--ig {
-  flex: 0;
-  flex-basis: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: start;
-}
-
-.footer__up--pics {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  margin-right: 2.5rem;
 }
 
 .footer__up--signup {
@@ -6562,6 +6602,13 @@ a {
   flex-direction: column;
   align-items: start;
   justify-content: space-around;
+  font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .footer__up--signup {
+    font-size: 1.8rem;
+  }
 }
 
 .footer__up--signup input {
@@ -6620,6 +6667,8 @@ a {
   background-color: #353b48;
   text-align: center;
   flex: 1;
+  font-size: 1.4rem;
+  color: rgba(250, 249, 249, 0.8);
 }
 
 .btn--footer {

@@ -12,11 +12,13 @@
         flex: 1;
         padding: 2rem 4rem;
         font-size: 1.4rem;
-        & > * {
-            height: 30vh;
+        @media only screen and(max-width:$bp-smallest) {
+            flex-direction: column;
         }
+
         &--heading {
-            font-size: 1.6rem;
+            font-size: 2rem;
+            font-weight: bold;
         }
         &--contact {
             display: flex;
@@ -24,7 +26,11 @@
             flex: 0;
             flex-basis: 25%;
             justify-content: space-around;
-            align-items: start;
+            align-items: flex-start;
+            @media only screen and(max-width:$bp-smallest) {
+                margin-bottom: 3.5rem;
+                font-size: 1.6rem;
+            }
         }
         &--info {
             display: flex;
@@ -35,38 +41,13 @@
         &--phone {
             display: flex;
             align-items: center;
+            justify-content: flex-start;
+            margin-top: 1.5rem;
             i {
-                margin-right: 2rem;
+                margin-right: 2.5rem;
             }
         }
 
-        &--locations {
-            flex: 0;
-            flex-basis: 25%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: start;
-        }
-        &--streets {
-            display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-        }
-
-        &--ig {
-            flex: 0;
-            flex-basis: 25%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: start;
-        }
-        &--pics {
-            display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-        }
         &--signup {
             flex: 0;
             flex-basis: 25%;
@@ -74,6 +55,10 @@
             flex-direction: column;
             align-items: start;
             justify-content: space-around;
+            font-size: 1.6rem;
+            @media only screen and(max-width:$bp-smallest) {
+                font-size: 1.8rem;
+            }
             input {
                 border: 0;
                 width: 100%;
@@ -126,6 +111,8 @@
         background-color: $grey-dark;
         text-align: center;
         flex: 1;
+        font-size: 1.4rem;
+        color: rgba($grey-light-1, 0.8);
     }
 }
 .btn--footer {

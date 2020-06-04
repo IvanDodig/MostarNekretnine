@@ -104,7 +104,7 @@
     <div class="footer__up">
         <div class="footer__up--contact">
             <div class="footer__up--heading">
-                Kontakt adresa
+                Kontakt
             </div>
             <div class="footer__up--info">
                 <div class="footer__up--location">
@@ -121,41 +121,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="footer__up--locations">
-            <div class="footer__up--heading">
-                Ulice
-            </div>
-            <div class="footer__up--streets">
-                <div class="footer__up--street">Ulica Hrvatske Mladezi</div>
-                <div class="footer__up--street">Ulica Hrvatske Mladezi</div>
-                <div class="footer__up--street">Ulica Hrvatske Mladezi</div>
-                <div class="footer__up--street">Ulica Hrvatske Mladezi</div>
-            </div>
-
-        </div>
-        <div class="footer__up--ig">
-            <div class="footer__up--heading">
-                Kontakt adresa
-            </div>
-            <div class="footer__up--pics">
-                <div class="footer__up--pic">
-                    1
-                </div>
-                <div class="footer__up--pic">
-                    2
-                </div>
-                <div class="footer__up--pic">
-                    3
-                </div>
-                <div class="footer__up--pic">
-                    3
-                </div>
-            </div>
-        </div>
         <div class="footer__up--signup">
             <div class="footer__up--desc">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, beatae?
+                Prijavite se na newsleter!
             </div>
             <label for="info">Enter your Email:</label>
             <input type="text" name="info" id="info">

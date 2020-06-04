@@ -11,7 +11,7 @@
     </div>
     <div class="showcase">
         <div class="home">
-            <img src="{{ asset('img/1.jpg') }}" alt="House 1">
+            <img src="{{ asset('img/gal-1.jpeg') }}" alt="House 1">
             <div class="home__name">Name</div>
             <div class="home__location">Location</div>
             <div class="home__price">Price</div>
@@ -20,7 +20,7 @@
             <button class="btn home__btn">Book Now</button>
         </div>
         <div class="home">
-            <img src="{{ asset('img/1.jpg') }}" alt="House 1">
+            <img src="{{ asset('img/gal-2.jpeg') }}" alt="House 1">
             <div class="home__name">Name</div>
             <div class="home__location">Location</div>
             <div class="home__price">Price</div>
@@ -29,7 +29,7 @@
             <button class="btn home__btn">Book Now</button>
         </div>
         <div class="home">
-            <img src="{{ asset('img/1.jpg') }}" alt="House 1">
+            <img src="{{ asset('img/gal-3.jpeg') }}" alt="House 1">
             <div class="home__name">Name</div>
             <div class="home__location">Location</div>
             <div class="home__price">Price</div>
@@ -38,7 +38,8 @@
             <button class="btn home__btn">Book Now</button>
         </div>
         <div class="home">
-            <img src="{{ asset('img/1.jpg') }}" alt="House 1">
+
+            <img src="{{ asset('img/gal-4.jpeg') }}" alt="House 1">
             <div class="home__name">Name</div>
             <div class="home__location">Location</div>
             <div class="home__price">Price</div>

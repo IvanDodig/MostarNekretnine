@@ -6,7 +6,7 @@
 <section class="details">
     <div class="details__left">
         <div class="details__carousel">
-            <img src="{{asset('img/1.jpg')}}" alt="Image 1">
+            <img src="{{asset('img/gal-1.jpeg')}}" alt="Image 1">
         </div>
 
         <div class="details__about">

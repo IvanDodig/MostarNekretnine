@@ -6,23 +6,11 @@ $color-primary: #212529;
 $color-secondary: #6abe45;
 $color-tertiary: #0097e6;
 
-$font-color: rgba(#000, 0.9);
+$font-color: rgba(#000, 0.8);
 
 $grey-light-1: #faf9f9;
 $grey-light-2: #c5cace54;
 $grey-dark: #353b48;
-
-// Colors
-$blue: #3490dc;
-$indigo: #6574cd;
-$purple: #9561e2;
-$pink: #f66d9b;
-$red: #e3342f;
-$orange: #f6993f;
-$yellow: #ffed4a;
-$green: #38c172;
-$teal: #4dc0b5;
-$cyan: #6cb2eb;
 
 * {
     margin: 0;
@@ -43,12 +31,12 @@ $bp-smallest: 37.5em; //600px
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    /*  @media only screen and(max-width:$bp-large) {
-        font-size: 50%;
+    @media only screen and(max-width:$bp-medium) {
+        font-size: 55%;
     }
     @media only screen and(max-width:$bp-small) {
-        font-size: 48%;
-    } */
+        font-size: 50%;
+    }
 }
 
 body {
@@ -90,12 +78,13 @@ body {
 main {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    padding: 7rem 5rem;
+    padding: 7rem 7rem;
+    gap: 5rem;
     @media only screen and(max-width:$bp-medium) {
         grid-template-columns: 1fr;
     }
 }
 a {
     text-decoration: none;
-    color: #000;
+    color: $grey-dark;
 }

@@ -47,7 +47,7 @@
         </div>
         <div class="form__login--row form__login--bottom">
             <span class="message--1">Dont have an account?</span>
-            <span class="message--2"><a href="{{ route('register') }}">Sign up</a> </span>
+            <span class="message--2"><a href="{{ route('register') }}">Sign up!</a> </span>
         </div>
 
     </form>

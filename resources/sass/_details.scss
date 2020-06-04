@@ -1,13 +1,21 @@
 .details {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 7rem 5rem;
-    gap: 5rem;
-
+    grid-template-rows: repeat(2, minmax(20rem, 1fr));
+    padding: 7rem 7rem;
+    column-gap: 5rem;
+    @media only screen and(max-width:$bp-medium) {
+        grid-template-rows: repeat(2, minmax(20rem, 50vh));
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
     &__left {
         display: flex;
         flex-direction: column;
         font-size: 1.5rem;
+        @media only screen and(max-width:$bp-medium) {
+            align-items: center;
+        }
     }
 
     &__bottom {
@@ -39,10 +47,9 @@
         &--login {
             min-width: 30vw;
             background: #fff;
-            border: 1px solid $grey-light-2;
-            border-top: 4px solid $color-tertiary;
-            border-radius: 0.5rem;
-            box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+            @media only screen and(max-width:$bp-medium) {
+                min-width: 50vw;
+            }
         }
     }
     &__bottom {
@@ -55,7 +62,10 @@
     display: flex;
     justify-content: space-around;
     margin: 2rem 0;
-
+    @media only screen and(max-width:$bp-smallest) {
+        flex-direction: column;
+        align-items: center;
+    }
     &__user {
         img {
             border-radius: 50%;
@@ -67,6 +77,10 @@
         flex: 0;
         flex-basis: 70%;
         justify-content: center;
+        @media only screen and(max-width:$bp-smallest) {
+            width: 60%;
+            margin-top: 2rem;
+        }
 
         &--text {
             font-size: 1.6rem;
