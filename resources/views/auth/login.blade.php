@@ -3,11 +3,11 @@
 @section('content')
 
 
-<div class="form">
+{{-- <div class="form">
     <form action="{{ route('login') }}" method="POST" class="form__login">
         @csrf
         <div class="form__login--row">
-            <div class="form__login--heading">Login</div>
+            <div class="form__login--heading heading-2">Login</div>
         </div>
         <div class="form__login--row">
             <label for="email">E-mail Address</label>
@@ -27,11 +27,11 @@
             <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="********">
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn--primary">Login</button>
         </div>
         <div class="form__login--row">
             @if (Route::has('password.request'))
-                <a class="btn btn-primary" href="{{ route('password.request') }}">
+                <a class="btn btn--primary" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
                 </a>
             @endif
@@ -42,5 +42,7 @@
         </div>
     </form>
 </div>
+ --}}
 
+<login></login>
 @endsection

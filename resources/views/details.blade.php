@@ -5,9 +5,23 @@
 
 <section class="details">
     <div class="details__left">
-        <div class="details__carousel">
-            <img src="{{asset('img/gal-1.jpeg')}}" alt="Image 1">
+
+        <div class="details__carousel js-flickity"
+        data-flickity-options='{ "wrapAround": true, "lazyLoad": true, "autoPlay":true, "contain":true }'>
+            <div class="details__carousel--cell">
+                <img src="{{ asset('img/gal-1.jpeg') }}" alt="Image">
+            </div>
+            <div class="details__carousel--cell">
+                <img src="{{ asset('img/gal-2.jpeg') }}" alt="Image">
+            </div>
+            <div class="details__carousel--cell">
+                <img src="{{ asset('img/gal-3.jpeg') }}" alt="Image">
+            </div>
+            <div class="details__carousel--cell">
+                <img src="{{ asset('img/gal-4.jpeg') }}" alt="Image">
+            </div>
         </div>
+
 
         <div class="details__about">
             <div class="details__about--heading">
@@ -24,7 +38,7 @@
             <form action="" method="POST" class="form__login details__form--login">
                 @csrf
                 <div class="form__login--row">
-                    <div class="form__login--heading">Rezerviraj stan!</div>
+                    <div class="form__login--heading heading-3">Rezerviraj stan!</div>
                 </div>
                 <div class="form__login--row">
                     <label for="date-in">Datum useljenja</label>
@@ -52,7 +66,7 @@
             </figcaption>
             <div class="review__desc">
                 <blockquote class="review__desc--text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sequi debitis eveniet quasi nisi, at alias nesciunt architecto rerum cum?
+                    Lorem, ipsum dolor sit amet consectetur adipisicing.
                 </blockquote>
                 <div class="review__desc--info">
                     <div class="review__desc--name">Skiljo Skiljoni</div>
@@ -66,8 +80,7 @@
             </figcaption>
             <div class="review__desc">
                 <blockquote class="review__desc--text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sequi debitis eveniet quasi nisi, at alias nesciunt architecto rerum cum?
-                </blockquote>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing.                </blockquote>
                 <div class="review__desc--info">
                     <div class="review__desc--name">Skiljo Skiljoni</div>
                     <div class="review__desc--rating">9.2</div>
@@ -80,8 +93,7 @@
             </figcaption>
             <div class="review__desc">
                 <blockquote class="review__desc--text">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore sequi debitis eveniet quasi nisi, at alias nesciunt architecto rerum cum?
-                </blockquote>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing.                </blockquote>
                 <div class="review__desc--info">
                     <div class="review__desc--name">Skiljo Skiljoni</div>
                     <div class="review__desc--rating">9.2</div>
@@ -90,5 +102,6 @@
         </figure>
     </div>
 </section>
+
 
 @endsection

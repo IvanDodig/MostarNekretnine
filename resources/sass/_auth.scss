@@ -2,11 +2,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
-    font-size: 1.6rem;
+    min-height: 105vh;
+    font-size: 1.5rem;
 }
 
 .form__login {
+    z-index: 10;
+    margin-top: 10vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,21 +30,23 @@
     background-color: #fff;
     &--heading {
         text-align: center;
-        font-size: 2.3rem;
-        margin-bottom: 2rem;
-        font-weight: 400;
+        color: $grey-dark;
+        margin-bottom: 1.5rem;
         padding-bottom: 0.5rem;
         border-bottom: 1px solid rgba($grey-dark, 0.5);
     }
 
     &--row {
         width: 100%;
-
+        transition: all 0.3s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         input {
             border: 0;
             width: 100%;
             padding: 1rem 0.5rem;
-            margin-bottom: 5vh;
+            margin-bottom: 1rem;
             border-right: none;
             border-top: none;
             border-left: none;
@@ -82,23 +86,33 @@
         color: #000;
     }
 }
-.btn-primary {
+
+.btn--primary,
+.btn--primary:link,
+.btn--primary:visited,
+.btn--primary:active {
     display: block;
     width: 100%;
     margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
     background-color: transparent;
     color: $color-tertiary;
-    border-radius: 0.5rem;
     text-decoration: none;
     text-align: center;
     font-size: 1.8rem;
     border: 1px solid $color-tertiary;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: 1rem 1.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    outline: none;
+    &:hover {
+        background-color: rgba($color-tertiary, 0.8);
+        color: $grey-light-1;
+    }
 }
-.btn-primary:hover {
-    background-color: rgba($color-tertiary, 0.8);
-    color: $grey-light-1;
-}
-
 //logged in screen
 .logged-in {
     display: flex;

@@ -3,12 +3,12 @@
 @section('content')
 
 
-
+{{--
 <div class="form">
     <form action="{{ route('register') }}" method="POST" class="form__login">
         @csrf
         <div class="form__login--row">
-            <div class="form__login--heading">Register</div>
+            <div class="form__login--heading heading-2">Register</div>
         </div>
         <div class="form__login--row">
             <label for="email">Name</label>
@@ -43,7 +43,7 @@
             <input id="password-confirm" type="password" name="password-confirmation" required autocomplete="new-password" placeholder="********">
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn--primary">Register</button>
         </div>
         <div class="form__login--row form__login--bottom">
             <span class="message--1">Dont have an account?</span>
@@ -51,5 +51,7 @@
         </div>
 
     </form>
-</div>
+</div> --}}
+
+<register></register>
 @endsection

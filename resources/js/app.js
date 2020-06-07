@@ -4,20 +4,17 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-/* import Vue from "vue";
+import Vue from "vue";
 
-import VueRouter from "vue-router";
+//import VueRouter from "vue-router";
 
-import routes from "./routes";
+//Vue.use(VueRouter);
 
-Vue.use(VueRouter);
-
-Vue.component("home", require("./components/Home.vue"));
-Vue.component("details", require("./components/Details.vue"));
+Vue.component("login", require("./components/Login.vue").default);
+Vue.component("register", require("./components/Register.vue").default);
 
 let app = new Vue({
-    el: "#app",
+    el: "#app"
 
-    router: new VueRouter(routes)
+    //router: new VueRouter(routes)
 });
- */

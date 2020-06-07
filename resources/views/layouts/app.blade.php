@@ -17,31 +17,30 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 </head>
 <body>
-
+<div id="app">
 <nav class="navigation">
     <a href="{{ url('/') }}"><h1 class="heading-1">StanoviMostar</h1></a>
-    <ul class="navigation__items">
-        <li class="navigation__item">
+    <div class="navigation__items">
+
+        <a class="navigation__item"  href="{{ route('login') }}">
+            <span>Login</span>
             <span>
                 <i class="fas fa-sign-in-alt"></i>
             </span>
-            <a class="navigation__item--link" href="{{ route('login') }}">
-            Login
-            </a>
-        </li>
+        </a>
 
-        <li class="navigation__item">
-
+        <a class="navigation__item" href="{{ route('register') }}">
+            <span>Register</span>
             <span>
                 <i class="fas fa-user-plus"></i>
             </span>
-            <a class="navigation__item--link" href="{{ route('register') }}">
-            Register
-            </a>
-        </li>
-    </ul>
+
+        </a>
+    </div>
 </nav>
 
 
@@ -103,7 +102,7 @@
 <footer class="footer">
     <div class="footer__up">
         <div class="footer__up--contact">
-            <div class="footer__up--heading">
+            <div class="footer__up--heading heading-3">
                 Kontakt
             </div>
             <div class="footer__up--info">
@@ -116,14 +115,14 @@
                     <span>stanovi.mostar@info.com</span>
                 </div>
                 <div class="footer__up--phone">
-                    <i class="far fa-phone"></i>
+                    <i class="fas fa-phone"></i>
                     <span>+387 63 111-111</span>
                 </div>
             </div>
         </div>
         <div class="footer__up--signup">
-            <div class="footer__up--desc">
-                Prijavite se na newsleter!
+            <div class="footer__up--desc heading-3">
+                Prijavite se na newsletter!
             </div>
             <label for="info">Enter your Email:</label>
             <input type="text" name="info" id="info">
@@ -145,7 +144,8 @@
         Copyright &copy; 2020 StanoviMostar
     </div>
 </footer>
-
+</div>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>
