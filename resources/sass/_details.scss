@@ -10,16 +10,15 @@
         grid-template-rows: 50vh 1fr 1fr;
         grid-template-columns: 1fr;
         column-gap: 5rem;
+        padding: 5rem;
     }
     &__left {
-        margin-top: 10vh;
         display: flex;
         flex-direction: column;
         @media only screen and(max-width:$bp-medium) {
             justify-content: center;
             align-items: center;
             grid-row: 2 / 4;
-            margin-top: 2vh;
         }
     }
 
@@ -58,7 +57,7 @@
         align-items: center;
         @media only screen and(max-width:$bp-medium) {
             grid-row: 1 / 2;
-            margin-top: 0;
+            align-self: center;
         }
     }
 
@@ -88,6 +87,7 @@
     margin: 2rem 0;
     padding: 2rem 3rem;
     background-color: #fff;
+    backface-visibility: hidden;
     transition: all 0.3s;
 
     @media only screen and(max-width:$bp-smallest) {
@@ -110,7 +110,6 @@
         padding-left: 1.5rem;
         @media only screen and(max-width:$bp-smallest) {
             width: 80%;
-            margin-top: 3rem;
         }
 
         &--text {

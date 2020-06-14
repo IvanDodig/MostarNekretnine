@@ -3,7 +3,7 @@
 @section('content')
 
 
-{{-- <div class="form">
+ <div class="form">
     <form action="{{ route('login') }}" method="POST" class="form__login">
         @csrf
         <div class="form__login--row">
@@ -42,7 +42,7 @@
         </div>
     </form>
 </div>
- --}}
 
-<login></login>
+
+{{-- <login></login> --}}
 @endsection

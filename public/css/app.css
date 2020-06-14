@@ -6091,7 +6091,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   color: rgba(0, 0, 0, 0.8);
-  background-color: #c5cace54;
+  background-color: #d7dbdf;
   font-size: 1.6rem;
 }
 
@@ -6152,7 +6152,9 @@ a {
 }
 
 .navigation {
-  position: fixed;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   background-color: #212529;
@@ -6167,33 +6169,39 @@ a {
   .navigation {
     flex-direction: column;
     align-items: center;
-    height: auto;
+    height: 15vh;
   }
 }
 
 .navigation__items {
   list-style-type: none;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navigation__item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 1.8rem;
   font-weight: 300;
-  padding: 1rem 2rem;
+  flex: 1;
+  padding: 1rem 1rem;
   align-self: stretch;
   margin: 0 2rem;
-  transition: all 0.3s;
   cursor: pointer;
-  transition: color 0.2s, background-color 0.2s;
+  transition: all 0.3s;
   color: rgba(250, 249, 249, 0.7);
   border-bottom: 1px solid #212529;
 }
 
-.navigation__item span {
+.navigation__item span:not(:last-child) {
   margin-right: 1rem;
-  transition: all 0.2s;
+}
+
+.navigation__item span {
+  transition: all 0.3s;
 }
 
 .navigation__item:hover {
@@ -6206,17 +6214,18 @@ a {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr;
   padding: 7rem 7rem;
   gap: 5rem;
 }
 
 .showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 5rem;
   align-items: center;
-  margin-top: 10vh;
+  grid-column: 1/-1;
+  grid-row: 1;
 }
 
 .home {
@@ -6240,7 +6249,7 @@ main {
   background-color: #212529;
   width: 80%;
   text-align: center;
-  z-index: 10;
+  z-index: 8;
   font-size: 1.6rem;
   color: #fff;
   transform: translateY(50%);
@@ -6277,10 +6286,6 @@ main {
   color: #fff;
 }
 
-.side {
-  margin-top: 10vh;
-}
-
 .pagination {
   margin-top: 2.5rem;
   text-align: center;
@@ -6291,7 +6296,7 @@ main {
 
 .pagination a {
   padding: 1rem 2rem;
-  border: 1px solid #c5cace54;
+  border: 1px solid #d7dbdf;
 }
 
 .pagination a i {
@@ -6307,17 +6312,47 @@ main {
   background-color: #ddd;
 }
 
+.sidebar {
+  background: #212529;
+  transform: translateX(-25rem);
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 10vh;
+  transition: all 0.3s;
+  width: 25rem;
+  height: 80vh;
+}
+
+.sidebar__toggle {
+  padding: 1rem 1.5rem;
+  position: fixed;
+  top: 6rem;
+  left: 2rem;
+}
+
+.sidebar__toggle--in {
+  left: 2rem;
+}
+
+.sidebar:target {
+  transform: translateX(0);
+}
+
+.isVisible {
+  transform: translateX(0);
+}
+
 .form {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 105vh;
+  min-height: 90vh;
   font-size: 1.5rem;
 }
 
 .form__login {
   z-index: 10;
-  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6325,7 +6360,7 @@ main {
   color: rgba(0, 0, 0, 0.8);
   padding: 1rem 2rem;
   min-width: 40vw;
-  border: 1px solid #c5cace54;
+  border: 1px solid #d7dbdf;
   border-top: 4px solid #0097e6;
   border-radius: 0.5rem;
   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
@@ -6368,7 +6403,7 @@ main {
   border-right: none;
   border-top: none;
   border-left: none;
-  border-bottom: 1px solid #c5cace54;
+  border-bottom: 1px solid #d7dbdf;
   background-color: transparent;
   outline: none;
   color: rgba(0, 0, 0, 0.9);
@@ -6466,11 +6501,11 @@ main {
     grid-template-columns: 1fr;
     -moz-column-gap: 5rem;
          column-gap: 5rem;
+    padding: 5rem;
   }
 }
 
 .details__left {
-  margin-top: 10vh;
   display: flex;
   flex-direction: column;
 }
@@ -6480,7 +6515,6 @@ main {
     justify-content: center;
     align-items: center;
     grid-row: 2/4;
-    margin-top: 2vh;
   }
 }
 
@@ -6526,7 +6560,7 @@ main {
 @media only screen and (max-width: 56.25em) {
   .details__right {
     grid-row: 1/2;
-    margin-top: 0;
+    align-self: center;
   }
 }
 
@@ -6561,6 +6595,8 @@ main {
   margin: 2rem 0;
   padding: 2rem 3rem;
   background-color: #fff;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transition: all 0.3s;
 }
 
@@ -6589,7 +6625,6 @@ main {
 @media only screen and (max-width: 37.5em) {
   .review__desc {
     width: 80%;
-    margin-top: 3rem;
   }
 }
 
@@ -6747,7 +6782,7 @@ main {
   border-right: none;
   border-top: none;
   border-left: none;
-  border-bottom: 1px solid #c5cace54;
+  border-bottom: 1px solid #d7dbdf;
   background-color: transparent;
   outline: none;
   color: #faf9f9;

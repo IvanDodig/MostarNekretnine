@@ -1,5 +1,7 @@
 .navigation {
-    position: fixed;
+    position: sticky;
+    top: 0;
+    //position: fixed;
     display: flex;
     align-items: center;
     background-color: $color-primary;
@@ -12,29 +14,35 @@
         flex-direction: column;
         align-items: center;
         //height: 100%;
-        height: auto;
+        height: 15vh;
+        //height: auto;
     }
     &__items {
         list-style-type: none;
         display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     &__item {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         font-size: 1.8rem;
         font-weight: 300;
-        padding: 1rem 2rem;
+        flex: 1;
+        padding: 1rem 1rem;
         align-self: stretch;
         margin: 0 2rem;
-        transition: all 0.3s;
         cursor: pointer;
-        transition: color 0.2s, background-color 0.2s;
+        transition: all 0.3s;
         color: rgba($color: $grey-light-1, $alpha: 0.7);
         border-bottom: 1px solid $color-primary;
 
-        span {
+        span:not(:last-child) {
             margin-right: 1rem;
-            transition: all 0.2s;
+        }
+        span {
+            transition: all 0.3s;
         }
     }
     &__item:hover {

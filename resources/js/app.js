@@ -7,9 +7,9 @@
 import Vue from "vue";
 
 //import VueRouter from "vue-router";
-
 //Vue.use(VueRouter);
 
+Vue.component("sidebar", require("./components/Sidebar.vue").default);
 Vue.component("login", require("./components/Login.vue").default);
 Vue.component("register", require("./components/Register.vue").default);
 

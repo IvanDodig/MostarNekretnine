@@ -3,12 +3,9 @@
 @section('content')
 
 <main>
-    <div class="side">
-        <div class="side__filter">
-            <input type="search" name="search" id="search" class="side__filter--search">
 
-        </div>
-    </div>
+
+    <sidebar></sidebar>
     <div class="showcase">
         <div class="home">
             <img src="{{ asset('img/gal-1.jpeg') }}" alt="House 1">
@@ -48,6 +45,7 @@
             <a  href="{{ url('/details') }}" class="btn home__btn">Book Now</a>
         </div>
     </div>
+
     <div class="pagination">
         <a href="#">
             <i class="fas fa-arrow-left"></i>

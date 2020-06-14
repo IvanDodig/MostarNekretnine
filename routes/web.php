@@ -14,15 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/details', 'DetailsController@index')->name('details');
 
-Route::post('/login', 'ContactFormController@login');
-Route::post('/register', 'ContactFormController@register');
+//Route::post('/login', 'ContactFormController@login');
+//Route::post('/register', 'ContactFormController@register');
 
 Route::get('/users', function(){
     return view('users');
