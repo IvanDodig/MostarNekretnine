@@ -27,8 +27,15 @@ Route::get('/users', function(){
     return view('users');
 });//->middleware('auth','auth.admin');
 
-Route::get('/create', function(){
-    return view('create');
-});
+
+Route::get('/','StanController@index');
+Route::get('/create','StanController@create');
+Route::post('/','StanController@store')->name('spremi');
+Route::put('/{id}','StanController@update');
+Route::delete('/{id}','StanController@destroy');
+Route::get('/show/{id}','StanController@show')->name('pogledaj');
+
+Route::get('/stan/{id}/edit','StanController@edit');
+
 
 

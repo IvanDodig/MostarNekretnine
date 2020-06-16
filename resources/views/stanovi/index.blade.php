@@ -4,18 +4,34 @@
 
 <main>
 
+    {{-- Button za objavljivanje stana, 
+        mogu ga vidjeti admin i author.. 
+        ti ga uredi kako treba
+        i pozicioniraj negdje na vrh--}}
+    <a class="btn" 
+      href="{{ url('/create') }}" 
+      type="submit">
+      Objavi novi stan</a>
 
     <sidebar></sidebar>
+    
     <div class="showcase">
-        <div class="home">
-            <img src="{{ asset('img/gal-1.jpeg') }}" alt="House 1">
-            <div class="home__name">Name</div>
-            <div class="home__location">Location</div>
-            <div class="home__price">Price</div>
-            <div class="home__area">100 m2</div>
-            <div class="home__rooms">100 m2</div>
-            <a href="{{ url('/details') }}" class="btn home__btn">Book Now</a>
-        </div>
+        
+        @foreach ($stanovi as $stan)
+            <div class="home">
+                <img src="{{ asset('img/gal-1.jpeg') }}" alt="House 1">
+                <div class="home__name">{{ $stan->naziv}}</div>
+                <div class="home__location">Location</div>
+                <div class="home__price">Price</div>
+                <div class="home__area"> {{ $stan->lokacija }} </div>
+                <div class="home__rooms"> {{ $stan->cijena_stana }} KM/dan </div>
+                {{-- <a href="/stan/{{$stan->id}}">Stan {{$stan->id}} </a> --}}
+                <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}">Book Now </a>
+                
+            </div>
+        @endforeach
+
+        
         <div class="home">
             <img src="{{ asset('img/gal-2.jpeg') }}" alt="House 1">
             <div class="home__name">Name</div>
@@ -23,7 +39,7 @@
             <div class="home__price">Price</div>
             <div class="home__area">100 m2</div>
             <div class="home__rooms">100 m2</div>
-            <a href="{{ url('/details') }}" class="btn home__btn">Book Now</a>
+            <a href="" class="btn home__btn">Book Now</a>
         </div>
         <div class="home">
             <img src="{{ asset('img/gal-3.jpeg') }}" alt="House 1">
@@ -32,7 +48,7 @@
             <div class="home__price">Price</div>
             <div class="home__area">100 m2</div>
             <div class="home__rooms">100 m2</div>
-            <a href="{{ url('/details') }}" class="btn home__btn">Book Now</a>
+            <a href="" class="btn home__btn">Book Now</a>
         </div>
         <div class="home">
 
@@ -42,7 +58,7 @@
             <div class="home__price">Price</div>
             <div class="home__area">100 m2</div>
             <div class="home__rooms">100 m2</div>
-            <a  href="{{ url('/details') }}" class="btn home__btn">Book Now</a>
+            <a  href="" class="btn home__btn">Book Now</a>
         </div>
     </div>
 
