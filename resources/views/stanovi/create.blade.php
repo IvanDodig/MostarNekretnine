@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="form__login--button">
-            <button type="submit" class="btn btn--create">Postavi stan</button>
+            <button type="submit" class="btn btn--primary">Postavi stan</button>
         </div>
 
     </form>

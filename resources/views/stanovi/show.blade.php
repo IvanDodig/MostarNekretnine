@@ -80,7 +80,8 @@
             </figcaption>
             <div class="review__desc">
                 <blockquote class="review__desc--text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.                </blockquote>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing.
+                </blockquote>
                 <div class="review__desc--info">
                     <div class="review__desc--name">Skiljo Skiljoni</div>
                     <div class="review__desc--rating">9.2</div>
@@ -93,7 +94,8 @@
             </figcaption>
             <div class="review__desc">
                 <blockquote class="review__desc--text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.                </blockquote>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing.
+                </blockquote>
                 <div class="review__desc--info">
                     <div class="review__desc--name">Skiljo Skiljoni</div>
                     <div class="review__desc--rating">9.2</div>

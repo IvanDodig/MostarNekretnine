@@ -33,7 +33,7 @@
             </span>
         </a>
 
-        
+
         @guest
         <a class="navigation__item"  href="{{ route('login') }}">
             <span>Login</span>
@@ -52,13 +52,13 @@
         @else
         <div>
             <a class="navigation__item" href="{{ route('logout') }}"
-               onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();">
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
                 <span>Odjavi se</span>
                 <span>
-                    <i class="fas fa-user-plus"></i>
+                    <i class="fas fa-sign-in-alt"></i>
                 </span>
-    
+
             </a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf

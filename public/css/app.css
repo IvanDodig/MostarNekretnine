@@ -6187,13 +6187,20 @@ a {
   font-size: 1.8rem;
   font-weight: 300;
   flex: 1;
-  padding: 1rem 1rem;
+  padding: 1rem 1rem 1rem 1rem;
   align-self: stretch;
   margin: 0 2rem;
   cursor: pointer;
   transition: all 0.3s;
   color: rgba(250, 249, 249, 0.7);
   border-bottom: 1px solid #212529;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .navigation__item {
+    padding: 0;
+    padding-bottom: 0.5rem;
+  }
 }
 
 .navigation__item span:not(:last-child) {
@@ -6219,13 +6226,33 @@ main {
   gap: 5rem;
 }
 
+@media only screen and (max-width: 37.5em) {
+  main {
+    padding: 5rem;
+  }
+}
+
 .showcase {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 0.5fr));
+  margin-top: 5rem;
   gap: 5rem;
   align-items: center;
+  justify-content: center;
   grid-column: 1/-1;
   grid-row: 1;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .showcase {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .showcase {
+    margin-top: 8rem;
+  }
 }
 
 .home {
@@ -6339,8 +6366,149 @@ main {
   transform: translateX(0);
 }
 
+.add-button {
+  position: absolute;
+  left: 50%;
+  top: 10vh;
+  margin-top: 3rem;
+  transform: translateX(-50%);
+  width: 40%;
+  display: flex;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .add-button {
+    width: 30%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .add-button {
+    width: 50%;
+    top: 15vh;
+    margin-top: 6rem;
+  }
+}
+
+.add-button a {
+  flex: 1;
+}
+
 .isVisible {
   transform: translateX(0);
+}
+
+.users {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 7rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .users {
+    padding: 3rem;
+  }
+}
+
+.user {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  border-radius: 3px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transition: all 0.3s;
+  transform-origin: center;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 37.5em) {
+  .user {
+    width: 75%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .user {
+    width: 70%;
+  }
+}
+
+.user:hover {
+  box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
+}
+
+.user-top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .user-top {
+    flex-direction: column;
+  }
+}
+
+.user-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .user-bottom {
+    margin-top: 1rem;
+  }
+}
+
+.user__img {
+  flex: 1;
+}
+
+.user__img img {
+  margin-left: 0.2rem;
+  border-radius: 50%;
+  width: 8rem;
+}
+
+.user__name {
+  flex: 1;
+}
+
+.user__role {
+  flex: 1;
+  margin-right: 0.2rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .user__img,
+  .user__name,
+  .user__role {
+    margin: 1rem 0;
+  }
+}
+
+.btn--users,
+.btn--users:link,
+.btn--users:visited,
+.btn--users:active {
+  padding: 0.5rem 1rem;
+}
+
+.users-heading {
+  margin-top: 0;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .form {
@@ -6385,6 +6553,7 @@ main {
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid rgba(53, 59, 72, 0.5);
+  font-size: 2rem;
 }
 
 .form__login--row {
@@ -6484,6 +6653,11 @@ main {
   text-align: center;
   font-size: 5rem;
   font-weight: 300;
+}
+
+.invalid-feedback {
+  color: #e02b2b;
+  padding: 1rem 0;
 }
 
 .details {
@@ -6595,14 +6769,15 @@ main {
   margin: 2rem 0;
   padding: 2rem 3rem;
   background-color: #fff;
+  border-radius: 3px;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: all 0.3s;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
 }
 
 @media only screen and (max-width: 37.5em) {
   .review {
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
     flex-direction: column;
     align-items: center;
     width: 80%;
@@ -6668,12 +6843,18 @@ main {
 }
 
 .form__create--login {
-  width: 75%;
+  width: 60%;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(2, 1fr);
   align-items: start;
   gap: 3rem;
+}
+
+@media only screen and (max-width: 43.75em) {
+  .form__create--login {
+    width: 80%;
+  }
 }
 
 .form__login--col {

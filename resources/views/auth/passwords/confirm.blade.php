@@ -1,7 +1,43 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="form">
+    <form action="{{ route('password.confirm') }}" method="POST" class="form__login">
+		@csrf
+        <div class="form__login--row">
+            <div class="form__login--heading heading-2">Please confirm your password</div>
+        </div>
+        <div class="form__login--row">
+            <label for="password">Password</label>
+        </div>
+        <div class="form__login--row">
+            <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="********">
+		</div>
+        <div class="form__login--row">
+            @error('password')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="form__login--row">
+            <button type="submit" class="btn btn--primary">Confirm password</button>
+        </div>
+        <div class="form__login--row">
+            @if (Route::has('password.request'))
+                <a class="btn btn--primary" href="{{ route('password.request') }}">
+                    {{ __('Forgot Your Password?') }}
+                </a>
+            @endif
+        </div>
+    </form>
+</div>
+
+@endsection
+
+
+
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -45,5 +81,4 @@
             </div>
         </div>
     </div>
-</div>
-@endsection
+</div> --}}

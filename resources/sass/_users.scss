@@ -1,0 +1,87 @@
+.users {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 7rem;
+    @media only screen and(max-width:$bp-smallest) {
+        padding: 3rem;
+    }
+}
+.user {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    border-radius: 3px;
+    backface-visibility: hidden;
+    transition: all 0.3s;
+    transform-origin: center;
+    box-shadow: 0 2rem 4rem rgba(#000, 0.1);
+    @media only screen and(max-width:$bp-smallest) {
+        width: 75%;
+    }
+    @media only screen and(max-width:$bp-medium) {
+        width: 70%;
+    }
+    &:hover {
+        box-shadow: 0 3rem 4rem rgba(#000, 0.2);
+        transform: scale(1.01);
+    }
+    &-top {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-align: center;
+        @media only screen and(max-width:$bp-smallest) {
+            flex-direction: column;
+        }
+    }
+    &-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @media only screen and(max-width:$bp-smallest) {
+            margin-top: 1rem;
+        }
+    }
+
+    &__img {
+        flex: 1;
+
+        img {
+            margin-left: 0.2rem;
+            border-radius: 50%;
+            width: 8rem;
+        }
+    }
+    &__name {
+        flex: 1;
+    }
+    &__role {
+        flex: 1;
+        margin-right: 0.2rem;
+    }
+    &__img,
+    &__name,
+    &__role {
+        @media only screen and(max-width:$bp-smallest) {
+            margin: 1rem 0;
+        }
+    }
+}
+.btn--users,
+.btn--users:link,
+.btn--users:visited,
+.btn--users:active {
+    padding: 0.5rem 1rem;
+}
+.users-heading {
+    margin-top: 0;
+    color: $font-color;
+    font-weight: 400;
+    text-transform: uppercase;
+}

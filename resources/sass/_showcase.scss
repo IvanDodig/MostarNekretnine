@@ -3,13 +3,25 @@ main {
     grid-template-columns: 1fr;
     padding: 7rem 7rem;
     gap: 5rem;
+    @media only screen and(max-width:$bp-smallest) {
+        padding: 5rem;
+    }
 }
 
 .showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 0.5fr));
+    margin-top: 5rem;
+    @media only screen and(max-width:$bp-small) {
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    }
+    @media only screen and(max-width:$bp-smallest) {
+        margin-top: 8rem;
+    }
+
     gap: 5rem;
     align-items: center;
+    justify-content: center;
     grid-column: 1 / -1;
     grid-row: 1;
 }
@@ -109,6 +121,27 @@ main {
 
     &:target {
         transform: translateX(0);
+    }
+}
+.add-button {
+    position: absolute;
+    left: 50%;
+    top: 10vh;
+    margin-top: 3rem;
+    transform: translateX(-50%);
+    width: 40%;
+    display: flex;
+
+    @media only screen and(max-width:$bp-medium) {
+        width: 30%;
+    }
+    @media only screen and(max-width:$bp-smallest) {
+        width: 50%;
+        top: 15vh;
+        margin-top: 6rem;
+    }
+    a {
+        flex: 1;
     }
 }
 .isVisible {

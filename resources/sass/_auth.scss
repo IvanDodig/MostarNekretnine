@@ -33,6 +33,7 @@
         margin-bottom: 1.5rem;
         padding-bottom: 0.5rem;
         border-bottom: 1px solid rgba($grey-dark, 0.5);
+        font-size: 2rem;
     }
 
     &--row {
@@ -121,4 +122,8 @@
     text-align: center;
     font-size: 5rem;
     font-weight: 300;
+}
+.invalid-feedback {
+    color: rgb(224, 43, 43);
+    padding: 1rem 0;
 }
