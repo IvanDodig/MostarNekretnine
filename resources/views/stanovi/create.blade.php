@@ -5,7 +5,7 @@
 <div class="form form__create">
 
 
-    <form action="{{ route('spremi') }}" method="post" class="form__login form__create--login">
+    <form action="{{ route('spremi') }}" method="post" class="form__login form__create--login" enctype="multipart/form-data">
         @csrf
 
         <div class="form__login--heading">Objavi stan!</div>
@@ -39,6 +39,10 @@
             <div class="form__login--row">
                 <label for="desc">Opis</label>
                 <input type="text" name="opis" id="desc" autofocus placeholder="Opis...">
+            </div>
+            <div class="form__login--row">
+                    <label for="desc">Fotografija</label>
+                    <input type="file" name="fotografija[]" multiple > 
             </div>
         </div>
         <div class="form__login--button">

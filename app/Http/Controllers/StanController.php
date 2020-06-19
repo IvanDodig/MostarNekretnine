@@ -4,12 +4,32 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Stan;
+use App\Fotografija as Foto;
 
 class StanController extends Controller
 {
     public function index(){
 
-        $stanovi = Stan::orderBy('created_at','desc')->paginate(4);
+   
+        $stanovi = Stan::orderBy('created_at','desc')->paginate(2);
+        $i = 0;
+        foreach($stanovi as $stan) {
+            $foto = null;
+            $foto = Foto::where('id_stan', $stan->id)->get();
+            $marko = null;
+            
+            
+            $j = 0;
+
+            foreach($foto as $f){
+                $marko[$j] = $f->putanja;
+                $j++;
+            }
+
+            $stan->putanja = $marko;
+            $marko = null;
+            $i++;
+        }
 
         return view('stanovi.index',['stanovi' => $stanovi]);
     }
@@ -23,7 +43,19 @@ class StanController extends Controller
         return view('stanovi.create');
     }
 
-    public function store(){
+    public function store(Request $request){
+
+        $this->validate($request, [
+            'naziv' => 'required',
+            'lokacija' => 'required',
+            'kvadratura' => 'required',
+            'cijena_stana' => 'required',
+            'opis' => 'required',
+            'fotografija' => 'nullable',
+        ]);
+
+
+        $img = $request->file('fotografija');
 
         $stan = new Stan;
         $stan->naziv = request('naziv');
@@ -35,6 +67,26 @@ class StanController extends Controller
         $stan->opis = request('opis');
 
         $stan->save();
+
+        $id = $stan->id;
+
+        if ($request->hasFile('fotografija')){
+            $duljina = count($img);
+            for($i = 0; $i < $duljina; $i++){
+                $foto = new Foto();
+                $filenameWithExt = $img[$i]->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $fileext = $img[$i]->getClientOriginalExtension();
+                $filenameToStore[$i] = $filename.'_'.time().'.'.$fileext;
+                $path = $img[$i]->storeAs('public/fotografija',$filenameToStore[$i]);
+
+                $foto->putanja = $filenameToStore[$i];
+                $foto->id_stan = $id;
+
+                $foto->save();
+            }
+        } 
+
 
         return redirect('/');
     }

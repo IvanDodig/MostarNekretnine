@@ -18,8 +18,22 @@
     <div class="showcase">
 
         @foreach ($stanovi as $stan)
+
+        
             <div class="home">
-                <img src="{{ asset('img/gal-1.jpeg') }}" alt="House 1">
+                @if ($stan->putanja)
+                
+                    <?php
+                        $slika = $stan->putanja;
+                        $rand_slika = array_rand($slika, 1);
+                        $rand_slika = $slika[$rand_slika];
+                    ?>
+                      
+                    <img src="{{ asset('storage/fotografija/'.$rand_slika) }}"  alt="House 1">
+                @else 
+                    
+                    <img src="{{ asset('storage/fotografija/noimage.jpg') }}" alt="House 1">
+                @endif 
                 <div class="home__name">{{ $stan->naziv}}</div>
                 <div class="home__location">Location</div>
                 <div class="home__price">Price</div>
@@ -30,47 +44,20 @@
 
             </div>
         @endforeach
-
-
-        <div class="home">
-            <img src="{{ asset('img/gal-2.jpeg') }}" alt="House 1">
-            <div class="home__name">Name</div>
-            <div class="home__location">Location</div>
-            <div class="home__price">Price</div>
-            <div class="home__area">100 m2</div>
-            <div class="home__rooms">100 m2</div>
-            <a href="#" class="btn home__btn">Book Now</a>
-        </div>
-        <div class="home">
-            <img src="{{ asset('img/gal-3.jpeg') }}" alt="House 1">
-            <div class="home__name">Name</div>
-            <div class="home__location">Location</div>
-            <div class="home__price">Price</div>
-            <div class="home__area">100 m2</div>
-            <div class="home__rooms">100 m2</div>
-            <a href="" class="btn home__btn">Book Now</a>
-        </div>
-        <div class="home">
-
-            <img src="{{ asset('img/gal-4.jpeg') }}" alt="House 1">
-            <div class="home__name">Name</div>
-            <div class="home__location">Location</div>
-            <div class="home__price">Price</div>
-            <div class="home__area">100 m2</div>
-            <div class="home__rooms">100 m2</div>
-            <a  href="" class="btn home__btn">Book Now</a>
-        </div>
+        
     </div>
 
     <div class="pagination">
-        <a href="#">
+        
+        <a href="{{ $stanovi->previousPageUrl() }}">
             <i class="fas fa-arrow-left"></i>
         </a>
-        <a href="#" class="active">1</a>
-        <a href="#">2</a>
-        <a href="#">3</a>
-        <a href="#">
+ 
+        <a href="#" class="active">{{ $stanovi->currentPage() }}</a>
+      
+        <a href="{{ $stanovi->nextPageUrl() }}">
             <i class="fas fa-arrow-right"></i>
+            
         </a>
     </div>
 </main>

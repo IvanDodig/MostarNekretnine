@@ -2274,7 +2274,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.error {\r\n    color: rgb(224, 43, 43);\r\n    font-size: 1.4rem;\r\n    margin-bottom: 1.5rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.error {\n    color: rgb(224, 43, 43);\n    font-size: 1.4rem;\n    margin-bottom: 1.5rem;\n}\n", ""]);
 
 // exports
 
@@ -2293,7 +2293,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.error {\r\n    color: rgb(224, 43, 43);\r\n    font-size: 1.4rem;\r\n    margin-bottom: 1.5rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.error {\n    color: rgb(224, 43, 43);\n    font-size: 1.4rem;\n    margin-bottom: 1.5rem;\n}\n", ""]);
 
 // exports
 
@@ -16492,8 +16492,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\PC\Desktop\StanoviMostarDod\MostarNekretnine\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\StanoviMostarDod\MostarNekretnine\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\ivand\Desktop\MostarNekretnine-StanoviMostar\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\ivand\Desktop\MostarNekretnine-StanoviMostar\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
