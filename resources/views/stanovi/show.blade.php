@@ -12,14 +12,14 @@
                 @foreach ($stan->putanja as $putanja)
                 <div class="details__carousel--cell">
                     <img src="{{ asset('storage/fotografija/'.$putanja) }}" alt="Image">
-                </div>  
+                </div>
                 @endforeach
             @else
             <div class="details__carousel--cell">
                 <img src="{{ asset('storage/fotografija/noimage.jpg') }}" alt="Image">
-            </div>  
+            </div>
             @endif
-            
+
         </div>
 
 
