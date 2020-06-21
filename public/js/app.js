@@ -16209,7 +16209,28 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component("register", __webpack_requi
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: "#app" //router: new VueRouter(routes)
 
-});
+}); // Vanilla JS
+/// DATE PICKER
+
+if (document.querySelector("#date-in")) {
+  var today = new Date().toISOString().substr(0, 10);
+  document.querySelector("#date-in").value = today;
+} //FILE INPUT
+
+
+if (document.getElementById("photo")) {
+  var showFileName = function showFileName(event) {
+    var input = event.srcElement;
+    var fileName = input.files[0].name;
+    var p = document.createElement("p");
+    p.innerText = "Filename: " + fileName;
+    infoArea.appendChild(p);
+  };
+
+  var fileInput = document.getElementById("photo");
+  var infoArea = document.querySelector(".files");
+  fileInput.addEventListener("change", showFileName);
+}
 
 /***/ }),
 

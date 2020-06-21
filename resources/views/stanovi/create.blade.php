@@ -8,7 +8,7 @@
     <form action="{{ route('spremi') }}" method="post" class="form__login form__create--login" enctype="multipart/form-data">
         @csrf
 
-        <div class="form__login--heading">Objavi stan!</div>
+        <div class="form__login--heading heading-2">Objavi stan!</div>
 
 
         <div class="form__login--col">
@@ -57,7 +57,10 @@
         <div class="form__login--file">
             <label for="photo">&nbsp;</label>
             <input type="file" name="fotografija[]" multiple id="photo">
-    </div>
+        </div>
+        <div class="form__login--row files">
+
+        </div>
         <div class="form__login--button">
             <button type="submit" class="btn btn--primary">Postavi stan</button>
         </div>

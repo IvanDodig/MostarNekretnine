@@ -170,7 +170,7 @@
 
     </div>
     <div class="footer__down">
-        Copyright &copy; 2020 StanoviMostar
+        Copyright &copy; 2020 <span>MoStan</span>
     </div>
 </footer>
 </div>

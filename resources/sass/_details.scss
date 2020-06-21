@@ -2,9 +2,9 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 0.9fr 0.5fr 1fr;
-    padding: 5%;
     align-items: start;
     gap: 5rem;
+    padding: 5%;
 
     @media only screen and(max-width:$bp-medium) {
         grid-template-rows: 50vh 1fr 1fr;
@@ -12,6 +12,7 @@
         column-gap: 5rem;
         padding: 5rem;
     }
+
     &__left {
         display: flex;
         flex-direction: column;
@@ -25,9 +26,7 @@
     &__carousel {
         width: 100%;
         margin-bottom: 6rem;
-        @media only screen and(max-width:$bp-medium) {
-            width: 100%;
-        }
+
         @media only screen and(max-width:$bp-smallest) {
             width: 120%;
         }
@@ -39,6 +38,7 @@
         &--cell {
             width: 100%;
             border-radius: 3px;
+            overflow: hidden;
         }
     }
     &__about {
@@ -53,13 +53,17 @@
 
     &__right {
         align-self: start;
-
         display: flex;
         justify-content: center;
         align-items: center;
+
         @media only screen and(max-width:$bp-medium) {
             grid-row: 1 / 2;
             align-self: center;
+        }
+        input {
+            font-size: 1.8rem;
+            cursor: pointer;
         }
     }
 
@@ -70,6 +74,7 @@
         &--login {
             min-width: 30vw;
             background: #fff;
+
             @media only screen and(max-width:$bp-medium) {
                 min-width: 60vw;
             }
@@ -89,21 +94,24 @@
     width: 75%;
     margin: 2rem 0;
     padding: 2rem 3rem;
-    background-color: #fff;
     border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 2rem 4rem rgba(#000, 0.1);
     backface-visibility: hidden;
     transition: all 0.3s;
-    box-shadow: 0 2rem 4rem rgba(#000, 0.1);
+
     @media only screen and(max-width:$bp-smallest) {
         flex-direction: column;
         align-items: center;
         width: 90%;
     }
+
     &__user {
         img {
             border-radius: 50%;
         }
     }
+
     &__desc {
         display: flex;
         flex-direction: column;
@@ -138,16 +146,6 @@
     box-shadow: 0 3rem 4rem rgba(#000, 0.2);
     transform: scale(1.01);
 }
-.flickity-prev-next-button {
-    @media only screen and(max-width:$bp-medium) {
-        width: 3.5rem !important;
-        height: 3.5rem !important;
-    }
-    @media only screen and(max-width:$bp-smallest) {
-        width: 3rem !important;
-        height: 3rem !important;
-    }
-}
 .form-details {
     width: 50%;
     justify-self: center;
@@ -158,9 +156,21 @@
         margin-top: 1rem;
         padding: 1rem;
         border: 1px solid #aaa;
+        border-radius: 0.3rem;
         outline: none;
         font-size: 1.6rem;
         caret-color: $grey-dark;
-        border-radius: 0.3rem;
+    }
+}
+
+//flickity plugin
+.flickity-prev-next-button {
+    @media only screen and(max-width:$bp-medium) {
+        width: 3.5rem !important;
+        height: 3.5rem !important;
+    }
+    @media only screen and(max-width:$bp-smallest) {
+        width: 3rem !important;
+        height: 3rem !important;
     }
 }

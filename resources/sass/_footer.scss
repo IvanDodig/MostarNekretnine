@@ -10,7 +10,7 @@
         justify-content: space-around;
         align-items: flex-start;
         flex: 1;
-        padding: 2rem 4rem;
+        padding: 3rem 5%;
 
         @media only screen and(max-width:$bp-smallest) {
             flex-direction: column;
@@ -127,6 +127,9 @@
         flex: 1;
         font-size: 1.4rem;
         color: rgba($grey-light-1, 0.8);
+        span {
+            font-family: "Lobster", cursive;
+        }
     }
 }
 .btn--footer {

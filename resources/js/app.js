@@ -18,3 +18,27 @@ let app = new Vue({
 
     //router: new VueRouter(routes)
 });
+
+// Vanilla JS
+
+/// DATE PICKER
+if (document.querySelector("#date-in")) {
+    let today = new Date().toISOString().substr(0, 10);
+    document.querySelector("#date-in").value = today;
+}
+
+//FILE INPUT
+if (document.getElementById("photo")) {
+    const fileInput = document.getElementById("photo");
+    const infoArea = document.querySelector(".files");
+
+    fileInput.addEventListener("change", showFileName);
+
+    function showFileName(event) {
+        const input = event.srcElement;
+        const fileName = input.files[0].name;
+        const p = document.createElement("p");
+        p.innerText = "Filename: " + fileName;
+        infoArea.appendChild(p);
+    }
+}

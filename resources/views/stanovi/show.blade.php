@@ -45,14 +45,14 @@
                     <label for="date-in">Datum useljenja</label>
                 </div>
                 <div class="form__login--row">
-                    <input type="text" id="date-in" name="date-in"  autofocus placeholder="1/1/2020">
+                    <input type="date" id="date-in" name="date-in" autofocus >
 
                 </div>
                 <div class="form__login--row">
                     <label for="date-out">Datum iseljenja</label>
                 </div>
                 <div class="form__login--row">
-                    <input id="date-out" type="text" name="date-out"  placeholder="1/1/2020">
+                    <input id="date-out" type="date" name="date-out" autofocus>
                 </div>
                 <div class="form__login--row">
                     <button type="submit" class="btn btn--primary">Rezerviraj</button>
