@@ -32,7 +32,7 @@ Route::get('/','StanController@index');
 Route::get('/create','StanController@create');
 Route::post('/','StanController@store')->name('spremi');
 Route::put('/{id}','StanController@update');
-Route::delete('/{id}','StanController@destroy');
+Route::delete('/{id}','StanController@destroy')->name('izbrisi');
 Route::get('/show/{id}','StanController@show')->name('pogledaj');
 
 Route::get('/stan/{id}/edit','StanController@edit');
