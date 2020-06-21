@@ -22,54 +22,56 @@
 </head>
 <body>
 <div id="app">
-<nav class="navigation">
-    <a href="{{ url('/') }}"><h1 class="heading-1">StanoviMostar</h1></a>
-    <div class="navigation__items">
+<header>
+    <nav class="navigation">
+        <a href="{{ url('/') }}"><h1 class="heading-1">MoStan</h1></a>
+        <div class="navigation__items">
 
-        <a class="navigation__item"  href="{{ url('/') }}">
-            <span>Home</span>
-            <span>
-                <i class="fas fa-house-user"></i>
-            </span>
-        </a>
+            <a class="navigation__item"  href="{{ url('/') }}">
+                <span>Home</span>
+                <span>
+                    <i class="fas fa-house-user"></i>
+                </span>
+            </a>
 
 
-        @guest
-        <a class="navigation__item"  href="{{ route('login') }}">
-            <span>Login</span>
-            <span>
-                <i class="fas fa-sign-in-alt"></i>
-            </span>
-        </a>
-
-        <a class="navigation__item" href="{{ route('register') }}">
-            <span>Register</span>
-            <span>
-                <i class="fas fa-user-plus"></i>
-            </span>
-
-        </a>
-        @else
-        <div>
-            <a class="navigation__item" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                <span>Odjavi se</span>
+            @guest
+            <a class="navigation__item"  href="{{ route('login') }}">
+                <span>Login</span>
                 <span>
                     <i class="fas fa-sign-in-alt"></i>
                 </span>
+            </a>
+
+            <a class="navigation__item" href="{{ route('register') }}">
+                <span>Register</span>
+                <span>
+                    <i class="fas fa-user-plus"></i>
+                </span>
 
             </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
+            @else
+            <div>
+                <a class="navigation__item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <span>Odjavi se</span>
+                    <span>
+                        <i class="fas fa-sign-in-alt"></i>
+                    </span>
+
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </div>
+            @endguest
+
+
         </div>
-        @endguest
+    </nav>
 
-
-    </div>
-</nav>
-
+</header>
 
 
 

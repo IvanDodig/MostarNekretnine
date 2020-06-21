@@ -4,6 +4,7 @@
     align-items: center;
     min-height: 90vh;
     font-size: 1.5rem;
+    padding: 2rem;
 }
 
 .form__login {
@@ -19,6 +20,9 @@
     border-top: 4px solid $color-tertiary;
     border-radius: 0.5rem;
     box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+    @media only screen and(min-width:$bp-x-largest) {
+        min-width: 30vw;
+    }
     @media only screen and(max-width:$bp-medium) {
         min-width: 50vw;
     }

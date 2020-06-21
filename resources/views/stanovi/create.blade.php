@@ -18,7 +18,7 @@
             </div>
             <div class="form__login--row">
                 <label for="price">Cijena stana</label>
-                <input type="text" name="cijena_stana" id="price" autofocus placeholder="cijena">
+                <input type="number" name="cijena_stana" id="price" autofocus placeholder="cijena">
             </div>
             <div class="form__login--row">
                 <label for="location">Lokacija stana</label>
@@ -29,22 +29,35 @@
 
         <div class="form__login--col">
             <div class="form__login--row">
-                <label for="dimensions">Dimenzije stana</label>
-                <input type="text" name="kvadratura" id="dimensions" autofocus placeholder="50m2">
+                <label for="dimensions">Dimenzije</label>
+                <input type="number" name="kvadratura" id="dimensions" autofocus placeholder="50m2">
             </div>
-            <div class="form__login--row">
-                <label for="internet">Internet</label>
-                <input type="text" name="internet" id="internet" autofocus placeholder="Da/Ne">
+            <div class="form__login--row">Internet</div>
+            <div class="form__login--row radio-buttons">
+                <div class="radio" id="internet">
+                    <input type="radio" name="internet" id="internetY" autofocus value="yes">
+                    <label for="internetY">Da</label>
+                    <div class="check"></div>
+                </div>
+                <div class="radio" id="internet">
+                    <input type="radio" name="internet" id="internetN" autofocus value="no">
+                    <label for="internetN">Ne</label>
+                    <div class="check"></div>
+                </div>
             </div>
             <div class="form__login--row">
                 <label for="desc">Opis</label>
                 <input type="text" name="opis" id="desc" autofocus placeholder="Opis...">
             </div>
-            <div class="form__login--row">
-                    <label for="desc">Fotografija</label>
-                    <input type="file" name="fotografija[]" multiple > 
-            </div>
+
         </div>
+        <div class="form__login--file-label">
+            <label for="photo">Fotografija</label>
+        </div>
+        <div class="form__login--file">
+            <label for="photo">&nbsp;</label>
+            <input type="file" name="fotografija[]" multiple id="photo">
+    </div>
         <div class="form__login--button">
             <button type="submit" class="btn btn--primary">Postavi stan</button>
         </div>

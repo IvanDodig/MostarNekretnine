@@ -1,8 +1,8 @@
 .details {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: repeat(2, minmax(20rem, 1fr));
-    padding: 7rem 7rem;
+    grid-template-rows: 0.9fr 0.5fr 1fr;
+    padding: 5%;
     align-items: start;
     gap: 5rem;
 
@@ -15,15 +15,16 @@
     &__left {
         display: flex;
         flex-direction: column;
+
         @media only screen and(max-width:$bp-medium) {
             justify-content: center;
             align-items: center;
             grid-row: 2 / 4;
         }
     }
-
     &__carousel {
         width: 100%;
+        margin-bottom: 6rem;
         @media only screen and(max-width:$bp-medium) {
             width: 100%;
         }
@@ -34,13 +35,12 @@
             width: 100%;
             height: 100%;
         }
-        margin-bottom: 6rem;
+
         &--cell {
             width: 100%;
             border-radius: 3px;
         }
     }
-
     &__about {
         &--heading {
             font-size: 2rem;
@@ -52,6 +52,8 @@
     }
 
     &__right {
+        align-self: start;
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -62,6 +64,7 @@
     }
 
     &__form {
+        padding: 0;
         align-items: flex-start;
         min-height: auto;
         &--login {
@@ -83,7 +86,7 @@
 .review {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 75%;
     margin: 2rem 0;
     padding: 2rem 3rem;
     background-color: #fff;
@@ -94,7 +97,7 @@
     @media only screen and(max-width:$bp-smallest) {
         flex-direction: column;
         align-items: center;
-        width: 80%;
+        width: 90%;
     }
     &__user {
         img {
@@ -107,6 +110,7 @@
         flex: 0;
         flex-basis: 70%;
         justify-content: center;
+        padding: 1rem 0;
         padding-left: 1.5rem;
         @media only screen and(max-width:$bp-smallest) {
             width: 80%;
@@ -142,5 +146,21 @@
     @media only screen and(max-width:$bp-smallest) {
         width: 3rem !important;
         height: 3rem !important;
+    }
+}
+.form-details {
+    width: 50%;
+    justify-self: center;
+    align-self: center;
+    grid-column: 1 / -1;
+
+    textarea {
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid #aaa;
+        outline: none;
+        font-size: 1.6rem;
+        caret-color: $grey-dark;
+        border-radius: 0.3rem;
     }
 }

@@ -33,6 +33,7 @@
         </div>
 
     </div>
+
     <div class="details__right">
         <div class="form details__form">
             <form action="" method="POST" class="form__login details__form--login">
@@ -59,7 +60,30 @@
             </form>
         </div>
     </div>
+    <form action="/" class="form__login form-details">
+        <div class="form__login--row">
+            <label for="email">E-mail Address</label>
+        </div>
+        <div class="form__login--row">
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@gmail.com">
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+        <div class="form__login--row">
+            <label for="review">Leave a review!</label>
+        </div>
+        <div class="form__login--row">
+            <textarea name="review" id="review" cols="9" rows="5"></textarea>
+        </div>
+        <div class="form__login--row">
+            <button type="submit" class="btn btn--primary">Send</button>
+        </div>
+    </form>
     <div class="details__bottom">
+
         <figure class="review">
             <figcaption class="review__user">
                 <img src="{{asset('img/user-1.jpg')}}" alt="">
