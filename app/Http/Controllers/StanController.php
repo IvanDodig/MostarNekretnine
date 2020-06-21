@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Stan;
 use App\Fotografija as Foto;
@@ -36,7 +37,24 @@ class StanController extends Controller
 
     public function show($id){
 
-        return view('stanovi.show', ['id' => $id]);
+        $stan1 = Stan::where('id',$id)->get();
+        $stan = $stan1[0];
+
+        $foto = Foto::where('id_stan', $stan->id)->get();
+        $putanje = null;
+        $j = 0;
+        foreach($foto as $f){
+            $putanje[$j] = $f->putanja;
+            $j++;
+        }
+
+        $stan->putanja = $putanje;
+        $putanje = null;
+        
+        return view('stanovi.show', [
+            'id' => $id,
+            'stan'=> $stan
+        ]);
     }
 
     public function create(){
@@ -112,8 +130,21 @@ class StanController extends Controller
 
     public function destroy($id){
         $stan = Stan::find($id);
+        $foto = Foto::where('id_stan', $stan->id)->get();
+
+        if (!$foto->isEmpty()) {
+           
+            $j = 0;
+            foreach($foto as $f){
+                echo $f->putanja;
+                Storage::delete('public/fotografija/'.$f->putanja);
+                $f->delete();
+                $j++;
+            } 
+        } 
+
         $stan->delete();
-        return redirect('/stan');
+        return redirect('/');
     }
 
 

@@ -8,19 +8,20 @@
 
         <div class="details__carousel js-flickity"
         data-flickity-options='{ "wrapAround": true, "lazyLoad": true, "autoPlay":true, "contain":true }'>
+            @if ($stan->putanja)
+                @foreach ($stan->putanja as $putanja)
+                <div class="details__carousel--cell">
+                    <img src="{{ asset('storage/fotografija/'.$putanja) }}" alt="Image">
+                </div>  
+                @endforeach
+            @else
             <div class="details__carousel--cell">
-                <img src="{{ asset('img/gal-1.jpeg') }}" alt="Image">
-            </div>
-            <div class="details__carousel--cell">
-                <img src="{{ asset('img/gal-2.jpeg') }}" alt="Image">
-            </div>
-            <div class="details__carousel--cell">
-                <img src="{{ asset('img/gal-3.jpeg') }}" alt="Image">
-            </div>
-            <div class="details__carousel--cell">
-                <img src="{{ asset('img/gal-4.jpeg') }}" alt="Image">
-            </div>
+                <img src="{{ asset('storage/fotografija/noimage.jpg') }}" alt="Image">
+            </div>  
+            @endif
+            
         </div>
+
 
 
         <div class="details__about">
