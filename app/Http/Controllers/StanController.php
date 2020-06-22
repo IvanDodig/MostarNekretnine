@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Stan;
 use App\Fotografija as Foto;
+use App\Ugovor;
 
 class StanController extends Controller
 {
@@ -147,5 +150,64 @@ class StanController extends Controller
         return redirect('/');
     }
 
+    public function rezerviraj($id, Request $request){
+        $stan = Stan::find($id);
+        $id = Auth::id();
+        $ugovor = Ugovor::where('id_stan',$stan->id)->get();
+
+
+
+        
+        $this->validate($request, [
+            'date-in' => 'required',
+            'date-out' => 'required'
+        ]);
+
+        $datein =  request('date-in');
+        $dateout =  request('date-out');
+        $datetime1 = new DateTime($datein);
+        $datetime2 = new DateTime($dateout);
+        $interval = $datetime1->diff($datetime2);
+        $days = $interval->format('%a');
+        $zauzet = FALSE;
+
+        if($id){
+            if(request('date-in') < request('date-out') and  date('Y-m-d') < request('date-in')){
+               
+
+                foreach($ugovor as $ug)
+                {
+                    $inVal = $ug->datum_useljenja <= request('date-in') && $ug->datum_iseljenja >= request('date-in');
+                    $outVal = $ug->datum_useljenja <= request('date-out') && $ug->datum_iseljenja >= request('date-out');
+
+                    if($inVal or $outVal)
+                    {
+                        print('Stan je zauzet od '. $ug->datum_useljenja . ' do  '. $ug->datum_iseljenja);
+                        $zauzet = TRUE;
+                        break;
+                    }
+                }
+                if(!$zauzet)
+                {
+                    $ugovor = new Ugovor;
+                    $ugovor->datum_useljenja = request('date-in'); 
+                    $ugovor->datum_iseljenja = request('date-out');
+                    $ugovor->cijena_ugovora = $days * $stan->cijena_stana;
+                    $ugovor->id_user = $id;
+                    $ugovor->id_stan = $stan->id;
+                    
+                    $ugovor->save();
+
+                    return redirect('/show/'.$stan->id);
+                }
+              
+
+            }else {
+                print('Unijeli ste stari datum ili vam je datum iseljenja veći od datuma iseljenja');
+            }
+        }else{
+            return(redirect('login'));
+        }
+    }
 
 }

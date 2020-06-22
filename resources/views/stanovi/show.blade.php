@@ -37,7 +37,7 @@
 
     <div class="details__right">
         <div class="form details__form">
-            <form action="" method="POST" class="form__login details__form--login">
+        <form action="{{route('rezerviraj',$stan->id)}}" method="POST" class="form__login details__form--login">
                 @csrf
                 <div class="form__login--row">
                     <div class="form__login--heading heading-3">Rezerviraj stan!</div>
