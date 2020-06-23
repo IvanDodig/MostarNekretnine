@@ -21,11 +21,11 @@
             @enderror
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn--primary">Confirm password</button>
+            <button type="submit" class="btn-primary">Confirm password</button>
         </div>
         <div class="form__login--row">
             @if (Route::has('password.request'))
-                <a class="btn btn--primary" href="{{ route('password.request') }}">
+                <a class="btn-primary btn-primary--sec" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
                 </a>
             @endif

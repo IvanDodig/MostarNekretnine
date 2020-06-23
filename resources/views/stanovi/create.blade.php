@@ -14,15 +14,15 @@
         <div class="form__login--col">
             <div class="form__login--row">
                 <label for="name">Naziv stana</label>
-                <input type="text" name="naziv" id="name" autofocus placeholder="naziv">
+                <input type="text" name="naziv" id="name" autofocus placeholder="naziv" required>
             </div>
             <div class="form__login--row">
                 <label for="price">Cijena stana</label>
-                <input type="number" name="cijena_stana" id="price" autofocus placeholder="cijena">
+                <input type="number" name="cijena_stana" id="price" autofocus placeholder="cijena" required>
             </div>
             <div class="form__login--row">
                 <label for="location">Lokacija stana</label>
-                <input type="text" name="lokacija" id="location" autofocus placeholder="lokacija">
+                <input type="text" name="lokacija" id="location" autofocus placeholder="lokacija" required>
             </div>
 
         </div>
@@ -30,7 +30,7 @@
         <div class="form__login--col">
             <div class="form__login--row">
                 <label for="dimensions">Dimenzije</label>
-                <input type="number" name="kvadratura" id="dimensions" autofocus placeholder="50m2">
+                <input type="number" name="kvadratura" id="dimensions" autofocus placeholder="50m2" required>
             </div>
             <div class="form__login--row">Internet</div>
             <div class="form__login--row radio-buttons">
@@ -56,13 +56,13 @@
         </div>
         <div class="form__login--file">
             <label for="photo">&nbsp;</label>
-            <input type="file" name="fotografija[]" multiple id="photo">
+            <input type="file" name="fotografija[]" multiple id="photo" required>
         </div>
         <div class="form__login--row files">
 
         </div>
         <div class="form__login--button">
-            <button type="submit" class="btn btn--primary">Postavi stan</button>
+            <button type="submit" class="btn btn-primary">Postavi stan</button>
         </div>
 
     </form>

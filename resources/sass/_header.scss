@@ -47,7 +47,11 @@ header {
             padding: 0;
             padding-bottom: 0.5rem;
         }
-
+        svg {
+            margin-top: 0.8rem;
+            height: 2rem;
+            width: 2rem;
+        }
         span:not(:last-child) {
             margin-right: 1rem;
         }

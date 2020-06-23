@@ -26,10 +26,12 @@
                         $rand_slika = $slika[$rand_slika];
                     ?>
 
-                    <img src="{{ asset('storage/fotografija/'.$rand_slika) }}"  alt="House 1">
+                        <img src="{{ asset('storage/fotografija/'.$rand_slika) }}"  alt="House 1">
+
                 @else
 
-                    <img src="{{ asset('storage/fotografija/noimage.jpg') }}" alt="House 1">
+                        <img src="{{ asset('storage/fotografija/noimage.jpg') }}" alt="House 1">
+
                 @endif
                 <div class="home__name">{{ $stan->naziv}}</div>
                 <div class="home__location">Location</div>
@@ -38,15 +40,15 @@
                 <div class="home__rooms"> {{ $stan->cijena_stana }} KM/dan </div>
                 {{--  <a href="/stan/{{$stan->id}}">Stan {{$stan->id}} </a> --}}
                 <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}">Book Now </a>
-                <div style="margin: 20px;">
-                    <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}"> uredi </a>
-                    <form action="{{ route('izbrisi', $stan->id) }}" method="post" class="pull-right" style="margin-top: 20px">
+                <div class="home__edit">
+                    <a class="btn-secondary home__btn--sec" href="{{ route('pogledaj',$stan->id) }}"> Uredi </a>
+                    <form action="{{ route('izbrisi', $stan->id) }}" method="post" >
                         @csrf
                         <input type="hidden" name="_method" value="delete"/>
-                        <input class="btn mx-5 btn-danger" type="submit" name="izbrisi" value="Izbriši">
+                        <input class="btn-secondary home__btn--sec" type="submit" name="izbrisi" value="Izbriši">
                     </form>
                 </div>
-                
+
 
             </div>
         @endforeach

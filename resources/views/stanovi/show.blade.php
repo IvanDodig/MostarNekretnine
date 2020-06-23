@@ -56,7 +56,7 @@
                     <input id="date-out" type="date" name="date-out" autofocus>
                 </div>
                 <div class="form__login--row">
-                    <button type="submit" class="btn btn--primary">Rezerviraj</button>
+                    <button type="submit" class="btn-primary">Rezerviraj</button>
                 </div>
             </form>
         </div>
@@ -80,7 +80,7 @@
             <textarea name="review" id="review" cols="9" rows="5"></textarea>
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn--primary">Send</button>
+            <button type="submit" class="btn-primary">Send</button>
         </div>
     </form>
     <div class="details__bottom">

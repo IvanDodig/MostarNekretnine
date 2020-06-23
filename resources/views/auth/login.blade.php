@@ -13,7 +13,7 @@
             <label for="email">E-mail Address</label>
         </div>
         <div class="form__login--row">
-            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@gmail.com">
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="name@gmail.com" autofocus>
         </div>
         @error('email')
         <div class="form__login--row">
@@ -26,14 +26,14 @@
             <label for="password">Password</label>
         </div>
         <div class="form__login--row">
-            <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="********">
+            <input id="password" type="password" name="password" required autocomplete="current-password">
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn--primary">Login</button>
+            <button type="submit" class="btn-primary">Login</button>
         </div>
         @if (Route::has('password.request'))
         <div class="form__login--row">
-                <a class="btn btn--primary" href="{{ route('password.request') }}">
+                <a class="btn-primary btn-primary--sec" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
                 </a>
         </div>

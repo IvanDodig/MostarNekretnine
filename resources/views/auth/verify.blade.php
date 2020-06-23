@@ -17,7 +17,7 @@
             {{ __('If you did not receive the email') }},
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn--primary">Click here to request another</button>
+            <button type="submit" class="btn-primary">Click here to request another</button>
         </div>
     </form>
 </div>

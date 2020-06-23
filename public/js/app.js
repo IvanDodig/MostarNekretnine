@@ -2203,6 +2203,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2255,7 +2269,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".container__cover[data-v-81fbb27e] {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 10;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.3s;\n  background-color: rgba(0, 0, 0, 0.8);\n  -webkit-filter: blur(1);\n          filter: blur(1);\n}\n.sidebar[data-v-81fbb27e] {\n  background: #353b48;\n  transform: translateX(-25rem);\n  position: fixed;\n  z-index: 15;\n  left: 0;\n  top: 10vh;\n  transition: all 0.3s;\n  width: 25rem;\n  height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  color: #fff;\n}\n@media only screen and (max-width: 37.5em) {\n.sidebar[data-v-81fbb27e] {\n    top: 15vh;\n}\n}\n.sidebar__item[data-v-81fbb27e] {\n  width: 80%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.sidebar__item select[data-v-81fbb27e] {\n  width: 100%;\n  padding: 0.5rem 1rem;\n  outline: none;\n  margin-top: 1.5rem;\n  font-size: 1.5rem;\n  border-radius: 0.5em;\n  background-color: #fff;\n}\n.sidebar__item select option[data-v-81fbb27e] {\n  color: #353b48;\n}\n.sidebar__item input[data-v-81fbb27e] {\n  color: #fff;\n  width: 100%;\n  border: 0;\n  padding: 1rem 0.5rem;\n  margin-bottom: 1rem;\n  border-right: none;\n  border-top: none;\n  border-left: none;\n  border-bottom: 1px solid #ddd;\n  background-color: transparent;\n  outline: none;\n}\n.sidebar__toggle[data-v-81fbb27e] {\n  z-index: 20;\n  padding: 1rem 1.5rem;\n  position: fixed;\n  top: 10vh;\n  width: 25rem;\n  left: 0;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  background: #4c4d4e;\n  cursor: pointer;\n  color: #fff;\n  transition: all 0.3s;\n}\n@media only screen and (max-width: 37.5em) {\n.sidebar__toggle[data-v-81fbb27e] {\n    top: 15vh;\n}\n}\n.sidebar__toggle i[data-v-81fbb27e] {\n  font-size: 2.3rem;\n  margin-right: 2rem;\n}\n.sidebar__toggle[data-v-81fbb27e]:hover {\n  background-color: #626364;\n}\n.sidebar__toggle[data-v-81fbb27e]:active {\n  background-color: #b5b8b9;\n}\n.sidebar__item[data-v-81fbb27e]:first-child {\n  margin-top: 5rem;\n}\n.sidebar__item[data-v-81fbb27e]:last-child {\n  flex: 0;\n  flex-basis: 20%;\n}\n.btn[data-v-81fbb27e],\n.btn[data-v-81fbb27e]:link,\n.btn[data-v-81fbb27e]:visited,\n.btn[data-v-81fbb27e]:active {\n  background-color: #6abe45;\n  color: #fff;\n  border: 1px solid #6abe45;\n  border-radius: 0.5rem;\n  font-size: 1.6rem;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 1rem 1.8rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  outline: none;\n  text-align: center;\n}\n.btn[data-v-81fbb27e]:hover,\n.btn[data-v-81fbb27e]:link:hover,\n.btn[data-v-81fbb27e]:visited:hover,\n.btn[data-v-81fbb27e]:active:hover {\n  background-color: #fff;\n  color: #6abe45;\n  border: 1px solid #fff;\n}\n.isVisible[data-v-81fbb27e] {\n  transform: translateX(0);\n}\n.isVisible ~ .showcase[data-v-81fbb27e] {\n  background-color: red;\n}\n.slide-enter-active[data-v-81fbb27e],\n.slide-leave-active[data-v-81fbb27e] {\n  transition: all 0.3s;\n  transform: translateX(0);\n}\n.slide-enter[data-v-81fbb27e],\n.slide-leave-to[data-v-81fbb27e] {\n  transform: translateX(-25rem);\n}", ""]);
+exports.push([module.i, ".container__cover[data-v-81fbb27e] {\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  position: fixed;\n  z-index: 10;\n  opacity: 0;\n  visibility: hidden;\n  transition: all 0.3s;\n  background-color: rgba(0, 0, 0, 0.8);\n  -webkit-filter: blur(1);\n          filter: blur(1);\n}\n.sidebar[data-v-81fbb27e] {\n  background: #353b48;\n  transform: translateX(-25rem);\n  position: fixed;\n  z-index: 15;\n  left: 0;\n  top: 10vh;\n  transition: all 0.3s;\n  width: 25rem;\n  height: 90vh;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: space-around;\n  color: #fff;\n}\n@media only screen and (max-width: 37.5em) {\n.sidebar[data-v-81fbb27e] {\n    top: 15vh;\n}\n}\n.sidebar__item[data-v-81fbb27e] {\n  width: 80%;\n  display: flex;\n  align-items: center;\n  flex-direction: column;\n}\n.sidebar__item select[data-v-81fbb27e] {\n  width: 100%;\n  padding: 0.5rem 1rem;\n  outline: none;\n  margin-top: 1.5rem;\n  font-size: 1.5rem;\n  border-radius: 0.5em;\n  background-color: #fff;\n}\n.sidebar__item select option[data-v-81fbb27e] {\n  color: #353b48;\n}\n.sidebar__item input[data-v-81fbb27e] {\n  color: #fff;\n  width: 100%;\n  border: 0;\n  padding: 1rem 0.5rem;\n  margin-bottom: 1rem;\n  border-right: none;\n  border-top: none;\n  border-left: none;\n  border-bottom: 1px solid #ddd;\n  background-color: transparent;\n  outline: none;\n}\n.sidebar__toggle[data-v-81fbb27e] {\n  z-index: 20;\n  padding: 1rem 1.5rem;\n  position: fixed;\n  top: 10vh;\n  width: 25rem;\n  left: 0;\n  display: flex;\n  justify-content: space-around;\n  align-items: center;\n  background: #4c4d4e;\n  cursor: pointer;\n  color: #fff;\n  transition: all 0.3s;\n}\n@media only screen and (max-width: 37.5em) {\n.sidebar__toggle[data-v-81fbb27e] {\n    top: 15vh;\n}\n}\n.sidebar__toggle svg[data-v-81fbb27e] {\n  width: 2.3rem;\n  height: 2.3rem;\n  margin-right: 2rem;\n}\n.sidebar__toggle[data-v-81fbb27e]:hover {\n  background-color: #626364;\n}\n.sidebar__toggle[data-v-81fbb27e]:active {\n  background-color: #b5b8b9;\n}\n.sidebar__item[data-v-81fbb27e]:first-child {\n  margin-top: 5rem;\n}\n.sidebar__item[data-v-81fbb27e]:last-child {\n  flex: 0;\n  flex-basis: 20%;\n}\n.btn[data-v-81fbb27e],\n.btn[data-v-81fbb27e]:link,\n.btn[data-v-81fbb27e]:visited,\n.btn[data-v-81fbb27e]:active {\n  background-color: #6abe45;\n  color: #fff;\n  border: 1px solid #6abe45;\n  border-radius: 0.5rem;\n  font-size: 1.6rem;\n  font-weight: bold;\n  text-transform: uppercase;\n  padding: 1rem 1.8rem;\n  cursor: pointer;\n  transition: all 0.2s;\n  outline: none;\n  text-align: center;\n}\n.btn[data-v-81fbb27e]:hover,\n.btn[data-v-81fbb27e]:link:hover,\n.btn[data-v-81fbb27e]:visited:hover,\n.btn[data-v-81fbb27e]:active:hover {\n  background-color: rgba(106, 190, 69, 0.9);\n}\n.isVisible[data-v-81fbb27e] {\n  transform: translateX(0);\n}\n.isVisible ~ .showcase[data-v-81fbb27e] {\n  background-color: red;\n}\n.slide-enter-active[data-v-81fbb27e],\n.slide-leave-active[data-v-81fbb27e] {\n  transition: all 0.3s;\n  transform: translateX(0);\n}\n.slide-enter[data-v-81fbb27e],\n.slide-leave-to[data-v-81fbb27e] {\n  transform: translateX(-25rem);\n}", ""]);
 
 // exports
 
@@ -2293,7 +2307,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.error {\r\n    color: rgb(224, 43, 43);\r\n    font-size: 1.4rem;\r\n    margin-bottom: 1.5rem;\n}\r\n", ""]);
+exports.push([module.i, "\n.error {\n    color: rgb(224, 43, 43);\n    font-size: 1.4rem;\n    margin-bottom: 1.5rem;\n}\n", ""]);
 
 // exports
 
@@ -3890,7 +3904,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form__login--row" }, [
-      _c("button", { staticClass: "btn--primary", attrs: { type: "submit" } }, [
+      _c("button", { staticClass: "btn-primary", attrs: { type: "submit" } }, [
         _vm._v("Register")
       ])
     ])
@@ -3950,7 +3964,30 @@ var render = function() {
             }
           },
           [
-            _c("i", { staticClass: "fas fa-search" }),
+            _c(
+              "svg",
+              {
+                staticClass: "svg-inline--fa fa-search fa-w-16",
+                attrs: {
+                  "aria-hidden": "true",
+                  focusable: "false",
+                  "data-prefix": "fas",
+                  "data-icon": "search",
+                  role: "img",
+                  xmlns: "http://www.w3.org/2000/svg",
+                  viewBox: "0 0 512 512"
+                }
+              },
+              [
+                _c("path", {
+                  attrs: {
+                    fill: "currentColor",
+                    d:
+                      "M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+                  }
+                })
+              ]
+            ),
             _vm._v("\n            Filter apartments\n        ")
           ]
         )

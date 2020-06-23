@@ -54,7 +54,19 @@ body {
     background-color: $grey-light-2;
     overflow-x: hidden;
 }
+@mixin btn {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0.5rem;
 
+    padding: 1rem 1.8rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+    transform-origin: center;
+    backface-visibility: hidden;
+}
 .heading-1 {
     position: relative;
     padding: 1rem 2rem;
@@ -63,6 +75,7 @@ body {
     color: $grey-light-1;
     font-weight: 300;
     font-family: "Lobster", cursive;
+    outline: none;
     @media only screen and(max-width:$bp-smallest) {
         padding: 0;
     }
@@ -80,23 +93,34 @@ body {
 }
 .btn,
 .btn:link,
-.btn:visited,
-.btn:active {
+.btn:visited {
+    color: $grey-light-1;
+    background-color: $color-secondary;
+    border: 1px solid $color-secondary;
+    @include btn;
+
+    &:active {
+        transform: translateY(1px);
+    }
+    &:hover {
+        background-color: rgba($color-secondary, 0.9);
+    }
+}
+.btn-secondary,
+.btn-secondary:link,
+.btn-secondary:visited {
     background-color: transparent;
     color: $color-secondary;
     border: 1px solid $color-secondary;
-    border-radius: 0.5rem;
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 1rem 1.8rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    outline: none;
-    &:hover {
-        background-color: $color-secondary;
-        color: #fff;
-    }
+    height: 4.5rem;
+    @include btn;
+}
+.btn-secondary:active {
+    transform: translateY(1px);
+}
+.btn-secondary:hover {
+    background-color: $color-secondary;
+    color: $grey-light-1;
 }
 
 a {

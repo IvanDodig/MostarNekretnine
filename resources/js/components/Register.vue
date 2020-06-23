@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="form__login--row">
-                <button type="submit" class="btn--primary">Register</button>
+                <button type="submit" class="btn-primary">Register</button>
             </div>
             <div class="form__login--row form__login--bottom">
                 <span class="message--1">Dont have an account?</span>

@@ -32,7 +32,7 @@
             <input id="password-confirm" type="password" name="password-confirm" required autocomplete="new-password" placeholder="********">
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn--primary">{{ __('Reset Password') }}</button>
+            <button type="submit" class="btn-primary">{{ __('Reset Password') }}</button>
         </div>
     </form>
 </div>
