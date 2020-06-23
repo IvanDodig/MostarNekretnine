@@ -61,18 +61,8 @@
             </form>
         </div>
     </div>
-    <form action="/" class="form__login form-details">
-        <div class="form__login--row">
-            <label for="email">E-mail Address</label>
-        </div>
-        <div class="form__login--row">
-            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@gmail.com">
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-        </div>
+    <form action="{{route('komentiraj',$stan->id)}}" method="POST" class="form__login form-details">
+        @csrf
         <div class="form__login--row">
             <label for="review">Leave a review!</label>
         </div>
@@ -83,22 +73,57 @@
             <button type="submit" class="btn-primary">Send</button>
         </div>
     </form>
+
+
     <div class="details__bottom">
 
-        <figure class="review">
-            <figcaption class="review__user">
-                <img src="{{asset('img/user-1.jpg')}}" alt="">
-            </figcaption>
-            <div class="review__desc">
-                <blockquote class="review__desc--text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.
-                </blockquote>
-                <div class="review__desc--info">
-                    <div class="review__desc--name">Skiljo Skiljoni</div>
-                    <div class="review__desc--rating">9.2</div>
+
+
+     
+        {{-- PETLJA ZA KOMENTARE --}}
+        @foreach ($komentari as $kom)
+            
+            @php
+                foreach($users as $user){
+                    if($user->id == $kom->id_user){
+                        $username = $user->name;
+                    }
+                }
+            @endphp
+
+            <figure class="review">
+                <figcaption class="review__user">
+                    <img src="{{asset('img/user-1.jpg')}}" alt="">
+                </figcaption>
+                <div class="review__desc">
+                    <blockquote class="review__desc--text">
+                        {{ $kom->komentar }}
+                    </blockquote>
+                    <div class="review__desc--info">
+                        <div class="review__desc--name">{{$username}}</div>
+                        <div class="review__desc--rating">9.2</div>
+                    </div>
                 </div>
-            </div>
-        </figure>
+            </figure>
+        @endforeach
+        {{-- KRAJ PETLJE ZA KOMENTARE --}}
+
+        {{-- PAGINACIJA KOMENTARA --}}
+        <div class="pagination">
+
+            <a href="{{ $komentari->previousPageUrl() }}">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+    
+            <a href="#" class="active">{{ $komentari->currentPage() }}</a>
+    
+            <a href="{{ $komentari->nextPageUrl() }}">
+                <i class="fas fa-arrow-right"></i>
+            </a>
+
+        </div>
+        {{-- KRAJ PAGINACIJE KOMENTARA --}}
+
         <figure class="review">
             <figcaption class="review__user">
                 <img src="{{asset('img/user-1.jpg')}}" alt="">

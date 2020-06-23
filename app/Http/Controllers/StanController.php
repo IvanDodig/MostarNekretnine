@@ -6,9 +6,11 @@ use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Stan;
 use App\Fotografija as Foto;
 use App\Ugovor;
+use App\Komentar;
 
 class StanController extends Controller
 {
@@ -53,10 +55,15 @@ class StanController extends Controller
 
         $stan->putanja = $putanje;
         $putanje = null;
+
+        $komentari = Komentar::where('id_stan', $stan->id)->paginate(1);
+        $users = DB::table('users')->get();
         
         return view('stanovi.show', [
             'id' => $id,
-            'stan'=> $stan
+            'stan'=> $stan,
+            'komentari' => $komentari,
+            'users' => $users
         ]);
     }
 
@@ -210,4 +217,23 @@ class StanController extends Controller
         }
     }
 
+    public function komentiraj($id, Request $request){
+        $stan = Stan::find($id);
+        $id = Auth::id();
+
+        $this->validate($request, [
+            'review' => 'required'
+        ]);
+
+        if($id){
+            $komentar = new Komentar;
+            $komentar->komentar = request('review');
+            $komentar->id_user = $id;
+            $komentar->id_stan = $stan->id; 
+
+            $komentar->save();
+
+            return redirect('/show/'.$stan->id);
+        }
+    }
 }

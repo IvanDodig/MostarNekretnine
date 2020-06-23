@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUgovorTable extends Migration
+class CreateKomentariTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUgovorTable extends Migration
      */
     public function up()
     {
-        Schema::create('ugovor', function (Blueprint $table) {
-            $table->bigIncrements('id');
+        Schema::create('komentari', function (Blueprint $table) {
+            $table->id();
             $table->timestamps();
-            $table->date('datum_useljenja');
-            $table->date('datum_iseljenja');
-            $table->float('cijena_ugovora');
+            $table->text('komentar');
             $table->integer('id_user')->references('id')->on('users');
             $table->integer('id_stan')->references('id')->on('stan');
         });
@@ -31,6 +29,6 @@ class CreateUgovorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ugovor');
+        Schema::dropIfExists('komentari');
     }
 }

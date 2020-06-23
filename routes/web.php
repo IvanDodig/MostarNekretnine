@@ -35,6 +35,7 @@ Route::put('/{id}','StanController@update');
 
 
 Route::post('/{id}','StanController@rezerviraj')->name('rezerviraj');
+Route::post('/komentiraj/{id}','StanController@komentiraj')->name('komentiraj');
 
 
 Route::delete('/{id}','StanController@destroy')->name('izbrisi');
