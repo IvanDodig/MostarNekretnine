@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-//$color-primary: #101d2c;
-//$color-secondary: #353b48;
 
 $color-primary: #212529;
 $color-secondary: #6abe45;
@@ -44,7 +42,6 @@ html {
         font-size: 50%;
     }
 }
-
 body {
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -54,19 +51,8 @@ body {
     background-color: $grey-light-2;
     overflow-x: hidden;
 }
-@mixin btn {
-    font-size: 1.6rem;
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 0.5rem;
 
-    padding: 1rem 1.8rem;
-    cursor: pointer;
-    outline: none;
-    transition: all 0.3s;
-    transform-origin: center;
-    backface-visibility: hidden;
-}
+//Headings
 .heading-1 {
     position: relative;
     padding: 1rem 2rem;
@@ -91,6 +77,22 @@ body {
     color: $grey-light-1;
     letter-spacing: 1px;
 }
+
+//buttons
+@mixin btn {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 0.5rem;
+
+    padding: 1rem 1.8rem;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s;
+    transform-origin: center;
+    backface-visibility: hidden;
+}
+
 .btn,
 .btn:link,
 .btn:visited {
@@ -103,7 +105,7 @@ body {
         transform: translateY(1px);
     }
     &:hover {
-        background-color: rgba($color-secondary, 0.9);
+        background-color: rgba($color-secondary, 0.8);
     }
 }
 .btn-secondary,
