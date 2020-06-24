@@ -17,7 +17,7 @@ class StanController extends Controller
     public function index(){
 
    
-        $stanovi = Stan::orderBy('created_at','desc')->paginate(2);
+        $stanovi = Stan::orderBy('created_at','desc')->paginate(6);
         $i = 0;
         foreach($stanovi as $stan) {
             $foto = null;

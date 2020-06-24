@@ -3,13 +3,16 @@
 @section('content')
 
 <main>
-    <div class="add-button">
-        <a class="btn"
-            href="{{ url('/create') }}"
-            type="submit">
-            Objavi novi stan
-        </a>
-    </div>
+    {{-- hasrole blade provjerava ulogu korisnika  --}}
+    @hasrole(['admin','author'])
+        <div class="add-button">
+            <a class="btn"
+                href="{{ url('/create') }}"
+                type="submit">
+                Objavi novi stan
+            </a>
+        </div>
+    @endhasrole
 
     <sidebar></sidebar>
 
@@ -40,6 +43,8 @@
                 <div class="home__rooms"> {{ $stan->cijena_stana }} KM/dan </div>
                 {{--  <a href="/stan/{{$stan->id}}">Stan {{$stan->id}} </a> --}}
                 <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}">Book Now </a>
+
+                @hasrole(['admin','author'])
                 <div class="home__edit">
                     <a class="btn-secondary home__btn--sec" href="{{ route('pogledaj',$stan->id) }}"> Uredi </a>
                     <form action="{{ route('izbrisi', $stan->id) }}" method="post" >
@@ -48,6 +53,7 @@
                         <input class="btn-secondary home__btn--sec" type="submit" name="izbrisi" value="Izbriši">
                     </form>
                 </div>
+                @endhasrole
 
 
             </div>

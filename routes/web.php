@@ -12,20 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+
 Auth::routes();
 
 
 Route::get('/details', 'DetailsController@index')->name('details');
 
 //Route::post('/login', 'ContactFormController@login');
-//Route::post('/register', 'ContactFormController@register');
 
-Route::get('/users', function(){
-    return view('users');
-});//->middleware('auth','auth.admin');
+Route::get('/users', 'UserController@index')->middleware('auth','auth.admin');
 
 
 Route::get('/','StanController@index');
