@@ -26,7 +26,9 @@ Route::get('/details', 'DetailsController@index')->name('details');
 Route::get('/users', function(){
     return view('users');
 });//->middleware('auth','auth.admin');
-
+Route::get('/user', function(){
+    return view('user');
+});
 
 Route::get('/','StanController@index');
 Route::get('/create','StanController@create');
