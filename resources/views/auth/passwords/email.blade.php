@@ -10,10 +10,10 @@
     <form action="{{ route('password.email') }}" method="POST" class="form__login">
 		@csrf
         <div class="form__login--row">
-            <div class="form__login--heading heading-2">Reset password</div>
+            <div class="form__login--heading heading-2">Resetiraj lozinku</div>
         </div>
         <div class="form__login--row">
-            <label for="email">E-mail Address</label>
+            <label for="email">E-mail Adresa</label>
         </div>
         <div class="form__login--row">
             <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@gmail.com">
@@ -24,7 +24,7 @@
             @enderror
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn-primary">{{ __('Send Password Reset Link') }}</button>
+            <button type="submit" class="btn-primary">{{ __('Posalji zahtjev za resetiranje') }}</button>
         </div>
     </form>
 </div>

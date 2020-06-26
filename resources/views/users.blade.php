@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="users">
-    <h1 class="heading-2 users-heading">All users</h1>
+    <h1 class="heading-2 users-heading">Svi korisnici</h1>
 
     @foreach ($users as $user)
         <div class="user">
@@ -13,10 +13,10 @@
                 <div class="user__role">{{$user->role}}</div>
             </div>
             <div class="user-bottom">
-                <a href="#" class="btn btn--users">Change role</a>
+                <a href="#" class="btn btn--users">Promijeni ulogu</a>
             </div>
         </div>
     @endforeach
-    
+
 </div>
 @endsection

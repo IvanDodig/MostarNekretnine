@@ -5,19 +5,19 @@
     <form action="{{ route('verification.resend') }}" method="POST" class="form__login">
 		@csrf
         <div class="form__login--row">
-            <div class="form__login--heading heading-2">Verify your email address</div>
+            <div class="form__login--heading heading-2">Potvrdi svoju E-mail adresu</div>
         </div>
         <div class="form__login--row">
             @if (session('resent'))
                 <div>
-                    {{ __('A fresh verification link has been sent to your email address.') }}
+                    {{ __('Link za potvrdu je poslan na vasu e-mail adresu') }}
                 </div>
             @endif
-            {{ __('Before proceeding, please check your email for a verification link.') }}
-            {{ __('If you did not receive the email') }},
+            {{ __('Prije nastavka, molimo provjerite e-mail za link potvrde ') }}
+
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn-primary">Click here to request another</button>
+            <button type="submit" class="btn-primary">{{ __('Klikni ovdje za slanje zahtjeva') }}</button>
         </div>
     </form>
 </div>

@@ -16,15 +16,15 @@ class StanController extends Controller
 {
     public function index(){
 
-   
+
         $stanovi = Stan::orderBy('created_at','desc')->paginate(6);
         $i = 0;
         foreach($stanovi as $stan) {
             $foto = null;
             $foto = Foto::where('id_stan', $stan->id)->get();
             $marko = null;
-            
-            
+
+
             $j = 0;
 
             foreach($foto as $f){
@@ -56,9 +56,10 @@ class StanController extends Controller
         $stan->putanja = $putanje;
         $putanje = null;
 
-        $komentari = Komentar::where('id_stan', $stan->id)->paginate(1);
+        //ovo sam nadoda da uzme samo 3
+        $komentari = Komentar::where('id_stan', $stan->id)->take(3)->get();//->paginate(1);
         $users = DB::table('users')->get();
-        
+
         return view('stanovi.show', [
             'id' => $id,
             'stan'=> $stan,
@@ -113,7 +114,7 @@ class StanController extends Controller
 
                 $foto->save();
             }
-        } 
+        }
 
 
         return redirect('/');
@@ -143,15 +144,15 @@ class StanController extends Controller
         $foto = Foto::where('id_stan', $stan->id)->get();
 
         if (!$foto->isEmpty()) {
-           
+
             $j = 0;
             foreach($foto as $f){
                 echo $f->putanja;
                 Storage::delete('public/fotografija/'.$f->putanja);
                 $f->delete();
                 $j++;
-            } 
-        } 
+            }
+        }
 
         $stan->delete();
         return redirect('/');
@@ -164,7 +165,7 @@ class StanController extends Controller
 
 
 
-        
+
         $this->validate($request, [
             'date-in' => 'required',
             'date-out' => 'required'
@@ -180,7 +181,7 @@ class StanController extends Controller
 
         if($id){
             if(request('date-in') < request('date-out') and  date('Y-m-d') < request('date-in')){
-               
+
 
                 foreach($ugovor as $ug)
                 {
@@ -197,17 +198,17 @@ class StanController extends Controller
                 if(!$zauzet)
                 {
                     $ugovor = new Ugovor;
-                    $ugovor->datum_useljenja = request('date-in'); 
+                    $ugovor->datum_useljenja = request('date-in');
                     $ugovor->datum_iseljenja = request('date-out');
                     $ugovor->cijena_ugovora = $days * $stan->cijena_stana;
                     $ugovor->id_user = $id;
                     $ugovor->id_stan = $stan->id;
-                    
+
                     $ugovor->save();
 
                     return redirect('/show/'.$stan->id);
                 }
-              
+
 
             }else {
                 print('Unijeli ste stari datum ili vam je datum iseljenja veći od datuma iseljenja');
@@ -229,7 +230,7 @@ class StanController extends Controller
             $komentar = new Komentar;
             $komentar->komentar = request('review');
             $komentar->id_user = $id;
-            $komentar->id_stan = $stan->id; 
+            $komentar->id_stan = $stan->id;
 
             $komentar->save();
 

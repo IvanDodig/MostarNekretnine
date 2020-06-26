@@ -37,12 +37,12 @@
 
                 @endif
                 <div class="home__name">{{ $stan->naziv}}</div>
-                <div class="home__location">Location</div>
-                <div class="home__price">Price</div>
-                <div class="home__area"> {{ $stan->lokacija }} </div>
-                <div class="home__rooms"> {{ $stan->cijena_stana }} KM/dan </div>
+                <div class="home__location">{{ $stan->lokacija }}</div>
+                <div class="home__price">{{ $stan->cijena_stana }} KM/dan</div>
+                <div class="home__area"> {{ $stan->kvadratura }} &#13217;</div>
+                <div class="home__rooms"> {{ $stan->broj_soba }} sobe</div>
                 {{--  <a href="/stan/{{$stan->id}}">Stan {{$stan->id}} </a> --}}
-                <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}">Book Now </a>
+                <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}">Rezerviraj</a>
 
                 @hasrole(['admin','author'])
                 <div class="home__edit">

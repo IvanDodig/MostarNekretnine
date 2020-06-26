@@ -6853,7 +6853,7 @@ main {
 .details {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 0.4fr 0.6fr;
+  grid-template-rows: 1fr 0.4fr 0, 0.6fr;
   align-items: start;
   gap: 5rem;
   padding: 5%;
@@ -6869,6 +6869,12 @@ main {
   }
 }
 
+@media only screen and (max-width: 25em) {
+  .details {
+    padding: 2rem;
+  }
+}
+
 .details__left {
   display: flex;
   flex-direction: column;
@@ -6879,19 +6885,14 @@ main {
   .details__left {
     justify-content: center;
     align-items: center;
-    grid-row: 2/4;
+    grid-row: 2/5;
+    grid-column: 1/-1;
   }
 }
 
 .details__carousel {
   width: 100%;
   margin-bottom: 4rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .details__carousel {
-    width: 115%;
-  }
 }
 
 .details__carousel--cell {
@@ -6915,6 +6916,25 @@ main {
      object-fit: cover;
 }
 
+.details__right {
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .details__right {
+    grid-row: 1/2;
+    align-self: center;
+  }
+}
+
+.details__right input {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 .details__desc {
   display: flex;
   flex-direction: column;
@@ -6923,17 +6943,25 @@ main {
   border: 1px solid #d7dbdf;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
   padding: 2rem 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 25em) {
+  .details__desc {
+    font-size: 1.4rem;
+  }
 }
 
 .details__desc-up {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .details__desc--name,
 .details__desc--wifi,
 .details__desc--location {
-  flex: 1;
+  flex-basis: 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6948,6 +6976,15 @@ main {
   margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .details__desc--name svg,
+  .details__desc--wifi svg,
+  .details__desc--location svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 .details__desc--name p,
 .details__desc--wifi p,
 .details__desc--location p {
@@ -6955,6 +6992,14 @@ main {
   margin-bottom: 1rem;
   height: 2.5rem;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 25em) {
+  .details__desc--name p,
+  .details__desc--wifi p,
+  .details__desc--location p {
+    font-size: 1.6rem;
+  }
 }
 
 .details__desc--name span,
@@ -6972,7 +7017,7 @@ main {
 .details__desc--rooms,
 .details__desc--price,
 .details__desc--size {
-  flex: 1;
+  flex-basis: 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6993,6 +7038,15 @@ main {
   margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .details__desc--rooms svg,
+  .details__desc--price svg,
+  .details__desc--size svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 .details__desc--rooms p,
 .details__desc--price p,
 .details__desc--size p {
@@ -7002,30 +7056,19 @@ main {
   font-size: 2rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .details__desc--rooms p,
+  .details__desc--price p,
+  .details__desc--size p {
+    font-size: 1.6rem;
+  }
+}
+
 .details__desc--rooms span,
 .details__desc--price span,
 .details__desc--size span {
   color: rgba(53, 59, 72, 0.8);
   margin-bottom: 1rem;
-}
-
-.details__right {
-  align-self: start;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media only screen and (max-width: 56.25em) {
-  .details__right {
-    grid-row: 1/2;
-    align-self: center;
-  }
-}
-
-.details__right input {
-  font-size: 1.8rem;
-  cursor: pointer;
 }
 
 .details__form {
@@ -7042,6 +7085,12 @@ main {
 @media only screen and (max-width: 56.25em) {
   .details__form--login {
     min-width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 25em) {
+  .details__form--login {
+    min-width: 70vw;
   }
 }
 
@@ -7066,6 +7115,7 @@ main {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   transition: all 0.3s;
+  transform-origin: center;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -7086,8 +7136,7 @@ main {
   flex: 0;
   flex-basis: 70%;
   justify-content: center;
-  padding: 1rem 0;
-  padding-left: 1.5rem;
+  padding: 2rem;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -7098,7 +7147,6 @@ main {
 
 .review__desc--text {
   font-size: 1.6rem;
-  margin-bottom: 1rem;
 }
 
 .review__desc--name {
@@ -7117,8 +7165,7 @@ main {
 }
 
 .review:hover {
-  box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.2);
-  transform: scale(1.01);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
 }
 
 .form-details {
@@ -7136,6 +7183,27 @@ main {
   outline: none;
   font-size: 1.6rem;
   caret-color: #353b48;
+}
+
+.form-rating {
+  margin-top: 1rem;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+}
+
+.form-rating input {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 10rem;
+  border-bottom: 1px solid #aaa;
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .form-rating input {
+    width: 7rem;
+  }
 }
 
 @media only screen and (max-width: 56.25em) {

@@ -20,17 +20,12 @@ Route::get('/details', 'DetailsController@index')->name('details');
 
 //Route::post('/login', 'ContactFormController@login');
 
-<<<<<<< HEAD
 Route::get('/users', 'UserController@index')->middleware('auth','auth.admin');
 
-=======
-Route::get('/users', function(){
-    return view('users');
-});//->middleware('auth','auth.admin');
+
 Route::get('/user', function(){
     return view('user');
 });
->>>>>>> 7c84e87d70ba4b32e815c8dc942889cecd3c9fd4
 
 Route::get('/','StanController@index');
 Route::get('/create','StanController@create');

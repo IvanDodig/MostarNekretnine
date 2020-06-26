@@ -152,9 +152,9 @@
             <div class="footer__up--desc heading-3">
                 Prijavite se na newsletter!
             </div>
-            <label for="info">Enter your Email:</label>
+            <label for="info">Unesi svoj E-mail</label>
             <input type="text" name="info" id="info">
-            <button class="btn btn--footer">Sign up Now</button>
+            <button class="btn btn--footer">Prijavi se!</button>
         </div>
 
     </div>
