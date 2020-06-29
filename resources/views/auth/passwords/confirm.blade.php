@@ -11,7 +11,7 @@
             <label for="password">Lozinka</label>
         </div>
         <div class="form__login--row">
-            <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="********">
+            <input id="password" type="password" name="password" required autocomplete="current-password" >
 		</div>
         <div class="form__login--row">
             @error('password')

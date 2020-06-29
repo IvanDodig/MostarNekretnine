@@ -13,7 +13,7 @@
             <label for="email">E-mail Adresa</label>
         </div>
         <div class="form__login--row">
-            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="name@gmail.com" autofocus>
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
         </div>
         @error('email')
         <div class="form__login--row">

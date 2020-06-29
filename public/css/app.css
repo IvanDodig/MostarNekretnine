@@ -6095,7 +6095,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   font-size: 1.6rem;
   background-color: #d7dbdf;
   overflow-x: hidden;
@@ -6612,7 +6612,7 @@ main {
 
 .users-heading {
   margin-top: 0;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   font-weight: 400;
   font-size: 3rem;
   text-transform: uppercase;
@@ -6635,7 +6635,7 @@ main {
   border-radius: 0.5rem;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   padding: 1rem 2rem;
   min-width: 40vw;
   border: 1px solid #d7dbdf;
@@ -6692,7 +6692,7 @@ main {
   align-items: center;
   justify-content: space-around;
   z-index: 10;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   padding: 1rem 2rem;
   min-width: 40vw;
   border: 1px solid #d7dbdf;
@@ -6737,6 +6737,10 @@ main {
   transition: all 0.3s;
 }
 
+.form__login--row label {
+  margin-bottom: 1rem;
+}
+
 .form__login--row input {
   border: 0;
   width: 100%;
@@ -6746,7 +6750,7 @@ main {
   border-top: none;
   border-left: none;
   border-bottom: 1px solid #d7dbdf;
-  background-color: transparent;
+  background-color: #e8f0fe;
   outline: none;
   color: rgba(0, 0, 0, 0.9);
   caret-color: rgba(0, 0, 0, 0.9);
@@ -7479,6 +7483,10 @@ input[type=radio]:checked ~ label {
   justify-content: space-around;
 }
 
+.footer__up--signup label {
+  margin-bottom: 1rem;
+}
+
 .footer__up--signup input {
   border: 0;
   width: 100%;
@@ -7487,8 +7495,8 @@ input[type=radio]:checked ~ label {
   border-right: none;
   border-top: none;
   border-left: none;
-  border-bottom: 1px solid #d7dbdf;
-  background-color: transparent;
+  border-bottom: 1px solid #353b48;
+  background-color: #353b48;
   outline: none;
   color: #faf9f9;
   caret-color: #faf9f9;

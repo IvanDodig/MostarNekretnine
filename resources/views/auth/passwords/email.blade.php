@@ -16,7 +16,7 @@
             <label for="email">E-mail Adresa</label>
         </div>
         <div class="form__login--row">
-            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@gmail.com">
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus >
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>

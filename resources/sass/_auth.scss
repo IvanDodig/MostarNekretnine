@@ -48,6 +48,9 @@
         flex-direction: column;
         justify-content: space-around;
         transition: all 0.3s;
+        label {
+            margin-bottom: 1rem;
+        }
 
         input {
             border: 0;
@@ -58,7 +61,7 @@
             border-top: none;
             border-left: none;
             border-bottom: 1px solid $grey-light-2;
-            background-color: transparent;
+            background-color: #e8f0fe;
             outline: none;
             color: rgba(#000, 0.9);
             caret-color: rgba(#000, 0.9);
