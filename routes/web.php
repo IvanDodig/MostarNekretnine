@@ -23,8 +23,10 @@ Route::get('/details', 'DetailsController@index')->name('details');
 Route::get('/users', 'UserController@index')->middleware('auth','auth.admin');
 
 
-Route::get('/','StanController@index');
+Route::get('/','StanController@index')->name('pocetna');
 Route::get('/create','StanController@create');
+/* Route::put('/{id}','StanController@update')->name('stan.update');
+Route::get('/{id}','StanController@edit')->name('edit'); */
 Route::post('/','StanController@store')->name('spremi');
 Route::put('/{id}','StanController@update');
 

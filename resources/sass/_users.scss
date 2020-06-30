@@ -22,15 +22,15 @@
     backface-visibility: hidden;
     transition: all 0.3s;
     transform-origin: center;
-    @media only screen and(max-width:$bp-smallest) {
-        width: 75%;
-    }
     @media only screen and(max-width:$bp-medium) {
         width: 70%;
     }
+    @media only screen and(max-width:$bp-smallest) {
+        width: 80%;
+    }
+
     &:hover {
-        box-shadow: 0 3rem 4rem rgba(#000, 0.2);
-        transform: scale(1.01);
+        box-shadow: 0 2rem 4rem rgba(#000, 0.2);
     }
     &-top {
         display: flex;

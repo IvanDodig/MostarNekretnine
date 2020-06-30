@@ -6095,7 +6095,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   font-size: 1.6rem;
   background-color: #d7dbdf;
   overflow-x: hidden;
@@ -6193,7 +6193,6 @@ body {
 
 a {
   text-decoration: none;
-  color: #353b48;
 }
 
 header {
@@ -6242,7 +6241,7 @@ header {
   padding: 1rem 1rem 1rem 1rem;
   margin: 0 2rem;
   cursor: pointer;
-  color: rgba(250, 249, 249, 0.7);
+  color: #d7dbdf;
   border-bottom: 1px solid #212529;
   transition: all 0.3s;
 }
@@ -6285,7 +6284,8 @@ main {
 
 @media only screen and (max-width: 37.5em) {
   main {
-    padding: 5rem;
+    padding: 3rem;
+    padding-top: 5rem;
   }
 }
 
@@ -6293,7 +6293,7 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 0.5fr));
   gap: 5rem;
-  padding: 5rem;
+  padding: 5rem 5%;
   align-items: center;
   justify-content: center;
   grid-column: 1/-1;
@@ -6377,7 +6377,7 @@ main {
   justify-self: center;
   align-self: end;
   text-align: center;
-  z-index: 8;
+  z-index: 10;
   transform: translateY(50%);
 }
 
@@ -6534,21 +6534,20 @@ main {
   transform-origin: center;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .user {
-    width: 75%;
-  }
-}
-
 @media only screen and (max-width: 56.25em) {
   .user {
     width: 70%;
   }
 }
 
+@media only screen and (max-width: 37.5em) {
+  .user {
+    width: 80%;
+  }
+}
+
 .user:hover {
-  box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.2);
-  transform: scale(1.01);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
 }
 
 .user-top {
@@ -6612,7 +6611,7 @@ main {
 
 .users-heading {
   margin-top: 0;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   font-weight: 400;
   font-size: 3rem;
   text-transform: uppercase;
@@ -6620,13 +6619,12 @@ main {
 
 .user-container {
   height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-card {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -40%);
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -6635,11 +6633,23 @@ main {
   border-radius: 0.5rem;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
   background-color: #fff;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   padding: 1rem 2rem;
   min-width: 40vw;
   border: 1px solid #d7dbdf;
-  height: 50vh;
+  min-height: 50vh;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .user-card {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .user-card {
+    width: 75%;
+  }
 }
 
 .user-card__up {
@@ -6647,6 +6657,12 @@ main {
   width: 100%;
   justify-content: space-around;
   align-items: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .user-card__up {
+    flex-direction: column;
+  }
 }
 
 .user-card__down {
@@ -6674,6 +6690,7 @@ main {
 }
 
 .user-card__email {
+  align-self: center;
   font-size: 1.4rem;
 }
 
@@ -6692,7 +6709,7 @@ main {
   align-items: center;
   justify-content: space-around;
   z-index: 10;
-  color: rgba(0, 0, 0, 0.8);
+  color: #121314;
   padding: 1rem 2rem;
   min-width: 40vw;
   border: 1px solid #d7dbdf;
@@ -6737,19 +6754,20 @@ main {
   transition: all 0.3s;
 }
 
+.form__login--row label {
+  margin-bottom: 1rem;
+}
+
 .form__login--row input {
   border: 0;
   width: 100%;
   padding: 1rem 0.5rem;
   margin-bottom: 1rem;
-  border-right: none;
-  border-top: none;
-  border-left: none;
   border-bottom: 1px solid #d7dbdf;
-  background-color: transparent;
+  background-color: #e8f0fe;
   outline: none;
-  color: rgba(0, 0, 0, 0.9);
-  caret-color: rgba(0, 0, 0, 0.9);
+  color: #121314;
+  caret-color: #121314;
   transition: all 0.3s;
 }
 
@@ -6770,22 +6788,12 @@ main {
 
 .form__login--bottom .message--1 {
   font-size: 1.3rem;
-  margin-right: 1rem;
 }
 
-.form__login--bottom .message--2 {
+.form__login--bottom .message--2,
+.form__login--bottom a {
   font-size: 1.7rem;
-  font-weight: bold;
-  text-decoration: underline;
-  transition: all 0.2s;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  transform-origin: center;
-}
-
-.form__login--bottom .message--2:hover {
-  transform: scale(1.05);
-  color: #000;
+  color: #0097e6;
 }
 
 .btn-primary,
@@ -6853,7 +6861,7 @@ main {
 .details {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 0.4fr 0.6fr;
+  grid-template-rows: 1fr 0.4fr 0, 0.6fr;
   align-items: start;
   gap: 5rem;
   padding: 5%;
@@ -6869,6 +6877,12 @@ main {
   }
 }
 
+@media only screen and (max-width: 25em) {
+  .details {
+    padding: 2rem;
+  }
+}
+
 .details__left {
   display: flex;
   flex-direction: column;
@@ -6879,19 +6893,14 @@ main {
   .details__left {
     justify-content: center;
     align-items: center;
-    grid-row: 2/4;
+    grid-row: 2/5;
+    grid-column: 1/-1;
   }
 }
 
 .details__carousel {
   width: 100%;
   margin-bottom: 4rem;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .details__carousel {
-    width: 115%;
-  }
 }
 
 .details__carousel--cell {
@@ -6915,6 +6924,25 @@ main {
      object-fit: cover;
 }
 
+.details__right {
+  align-self: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .details__right {
+    grid-row: 1/2;
+    align-self: center;
+  }
+}
+
+.details__right input {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
 .details__desc {
   display: flex;
   flex-direction: column;
@@ -6923,17 +6951,25 @@ main {
   border: 1px solid #d7dbdf;
   box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
   padding: 2rem 0;
+  width: 100%;
+}
+
+@media only screen and (max-width: 25em) {
+  .details__desc {
+    font-size: 1.4rem;
+  }
 }
 
 .details__desc-up {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 
 .details__desc--name,
 .details__desc--wifi,
 .details__desc--location {
-  flex: 1;
+  flex-basis: 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6948,6 +6984,15 @@ main {
   margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .details__desc--name svg,
+  .details__desc--wifi svg,
+  .details__desc--location svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 .details__desc--name p,
 .details__desc--wifi p,
 .details__desc--location p {
@@ -6955,6 +7000,14 @@ main {
   margin-bottom: 1rem;
   height: 2.5rem;
   font-size: 2rem;
+}
+
+@media only screen and (max-width: 25em) {
+  .details__desc--name p,
+  .details__desc--wifi p,
+  .details__desc--location p {
+    font-size: 1.6rem;
+  }
 }
 
 .details__desc--name span,
@@ -6972,7 +7025,7 @@ main {
 .details__desc--rooms,
 .details__desc--price,
 .details__desc--size {
-  flex: 1;
+  flex-basis: 33%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6993,6 +7046,15 @@ main {
   margin-bottom: 1rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .details__desc--rooms svg,
+  .details__desc--price svg,
+  .details__desc--size svg {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
 .details__desc--rooms p,
 .details__desc--price p,
 .details__desc--size p {
@@ -7002,30 +7064,19 @@ main {
   font-size: 2rem;
 }
 
+@media only screen and (max-width: 25em) {
+  .details__desc--rooms p,
+  .details__desc--price p,
+  .details__desc--size p {
+    font-size: 1.6rem;
+  }
+}
+
 .details__desc--rooms span,
 .details__desc--price span,
 .details__desc--size span {
   color: rgba(53, 59, 72, 0.8);
   margin-bottom: 1rem;
-}
-
-.details__right {
-  align-self: start;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@media only screen and (max-width: 56.25em) {
-  .details__right {
-    grid-row: 1/2;
-    align-self: center;
-  }
-}
-
-.details__right input {
-  font-size: 1.8rem;
-  cursor: pointer;
 }
 
 .details__form {
@@ -7042,6 +7093,12 @@ main {
 @media only screen and (max-width: 56.25em) {
   .details__form--login {
     min-width: 60vw;
+  }
+}
+
+@media only screen and (max-width: 25em) {
+  .details__form--login {
+    min-width: 70vw;
   }
 }
 
@@ -7086,8 +7143,7 @@ main {
   flex: 0;
   flex-basis: 70%;
   justify-content: center;
-  padding: 1rem 0;
-  padding-left: 1.5rem;
+  padding: 2rem;
 }
 
 @media only screen and (max-width: 37.5em) {
@@ -7098,7 +7154,6 @@ main {
 
 .review__desc--text {
   font-size: 1.6rem;
-  margin-bottom: 1rem;
 }
 
 .review__desc--name {
@@ -7117,8 +7172,7 @@ main {
 }
 
 .review:hover {
-  box-shadow: 0 3rem 4rem rgba(0, 0, 0, 0.2);
-  transform: scale(1.01);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
 }
 
 .form-details {
@@ -7136,6 +7190,27 @@ main {
   outline: none;
   font-size: 1.6rem;
   caret-color: #353b48;
+}
+
+.form-rating {
+  margin-top: 1rem;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+}
+
+.form-rating input {
+  font-size: 1.5rem;
+  text-align: center;
+  width: 10rem;
+  border-bottom: 1px solid #aaa;
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .form-rating input {
+    width: 7rem;
+  }
 }
 
 @media only screen and (max-width: 56.25em) {
@@ -7169,7 +7244,7 @@ main {
 
 @media only screen and (max-width: 43.75em) {
   .form__create--login {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -7199,7 +7274,7 @@ main {
 }
 
 .form__login--file label::after {
-  content: "Drag and drop or click";
+  content: "Povuci i pusti ili klikni za prenosenje";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -7213,6 +7288,11 @@ main {
 
 .form__login--col {
   grid-row: 2/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
 .form__login--heading {
@@ -7237,12 +7317,7 @@ input[type=file] {
 .radio-buttons {
   display: flex;
   flex-direction: row;
-}
-
-@media only screen and (max-width: 37.5em) {
-  .radio-buttons {
-    flex-direction: column;
-  }
+  justify-content: flex-start;
 }
 
 .radio {
@@ -7251,10 +7326,8 @@ input[type=file] {
   flex-direction: row;
   align-items: center;
   justify-items: flex-start;
-  width: 50%;
-  padding: 0.7rem 0.5rem;
-  margin-bottom: 1rem;
-  color: rgba(0, 0, 0, 0.9);
+  padding: 0.8rem 0.5rem;
+  color: #121314;
   font-size: 1.5rem;
   outline: none;
   transition: all 0.3s;
@@ -7262,7 +7335,7 @@ input[type=file] {
 
 @media only screen and (max-width: 37.5em) {
   .radio {
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -7362,7 +7435,6 @@ input[type=radio]:checked ~ label {
 .footer__up--contact {
   display: flex;
   flex-direction: column;
-  flex: 0;
   flex-basis: 25%;
   justify-content: space-around;
   align-items: flex-start;
@@ -7403,12 +7475,15 @@ input[type=radio]:checked ~ label {
 }
 
 .footer__up--signup {
-  flex: 0;
   flex-basis: 25%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+}
+
+.footer__up--signup label {
+  margin-bottom: 1rem;
 }
 
 .footer__up--signup input {
@@ -7419,8 +7494,8 @@ input[type=radio]:checked ~ label {
   border-right: none;
   border-top: none;
   border-left: none;
-  border-bottom: 1px solid #d7dbdf;
-  background-color: transparent;
+  border-bottom: 1px solid #353b48;
+  background-color: #353b48;
   outline: none;
   color: #faf9f9;
   caret-color: #faf9f9;
@@ -7453,7 +7528,7 @@ input[type=radio]:checked ~ label {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 1rem;
+  margin: 0 1.2rem;
   width: 4.2rem;
   background: #212529;
   border: 1px solid #fff;

@@ -11,20 +11,23 @@ use App\Stan;
 use App\Fotografija as Foto;
 use App\Ugovor;
 use App\Komentar;
+use Illuminate\Support\Facades\Validator;
 
 class StanController extends Controller
 {
-    public function index(){
+    public function index(Request $request){
+        if ($request->has('odcijena')) {
+            print(request('odcijena'));
+        }
 
-   
         $stanovi = Stan::orderBy('created_at','desc')->paginate(6);
         $i = 0;
         foreach($stanovi as $stan) {
             $foto = null;
             $foto = Foto::where('id_stan', $stan->id)->get();
             $marko = null;
-            
-            
+
+
             $j = 0;
 
             foreach($foto as $f){
@@ -56,9 +59,10 @@ class StanController extends Controller
         $stan->putanja = $putanje;
         $putanje = null;
 
-        $komentari = Komentar::where('id_stan', $stan->id)->paginate(1);
+        //ovo sam nadoda da uzme samo 3
+        $komentari = Komentar::where('id_stan', $stan->id)->take(3)->get();//->paginate(1);
         $users = DB::table('users')->get();
-        
+
         return view('stanovi.show', [
             'id' => $id,
             'stan'=> $stan,
@@ -73,7 +77,7 @@ class StanController extends Controller
 
     public function store(Request $request){
 
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'naziv' => 'required',
             'lokacija' => 'required',
             'kvadratura' => 'required',
@@ -81,6 +85,10 @@ class StanController extends Controller
             'opis' => 'required',
             'fotografija' => 'nullable',
         ]);
+        if($validator->fails()){
+            return back()->withError('Unesite sva polja')->withInput();
+        }
+        
 
 
         $img = $request->file('fotografija');
@@ -113,45 +121,79 @@ class StanController extends Controller
 
                 $foto->save();
             }
-        } 
+        }
 
 
         return redirect('/');
     }
 
-    public function edit($id){
+/*     public function edit($id){
         $stan = Stan::find($id);
         return view('stanovi.edit',['stan' => $stan]);
     }
+ */
+ /*    public function update($id){
 
-    public function update($id){
+        $img = $request->file('fotografija');
 
+       
         $stan = Stan::find($id);
-        $stan->lokacija = request('lokacija');
-        $stan->kvadratura = request('kvadratura');
-        $stan->broj_soba = request('brojsoba');
-        $stan->cijena_stana = request('cijena');
-
+        if(request('naziv')){
+            $stan->naziv = request('naziv');
+        }
+        if(request('lokacija')){
+            $stan->lokacija = request('lokacija');
+        }
+        if(request('kvadratura')){
+            $stan->kvadratura = request('kvadratura');
+        }
+        if(request('cijena_stana')){
+            $stan->cijena_stana = request('cijena_stana');
+        }
+        if(request('opis')){
+            $stan->opis = request('opis');
+        }
+        
         $stan->save();
 
-        return redirect('/stan');
 
-    }
+
+        if ($request->hasFile('fotografija')){
+            $duljina = count($img);
+            for($i = 0; $i < $duljina; $i++){
+                $foto = new Foto();
+                $filenameWithExt = $img[$i]->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $fileext = $img[$i]->getClientOriginalExtension();
+                $filenameToStore[$i] = $filename.'_'.time().'.'.$fileext;
+                $path = $img[$i]->storeAs('public/fotografija',$filenameToStore[$i]);
+
+                $foto->putanja = $filenameToStore[$i];
+                $foto->id_stan = $id;
+
+                $foto->save();
+            }
+        }
+
+
+        return redirect('/');
+
+    } */
 
     public function destroy($id){
         $stan = Stan::find($id);
         $foto = Foto::where('id_stan', $stan->id)->get();
 
         if (!$foto->isEmpty()) {
-           
+
             $j = 0;
             foreach($foto as $f){
                 echo $f->putanja;
                 Storage::delete('public/fotografija/'.$f->putanja);
                 $f->delete();
                 $j++;
-            } 
-        } 
+            }
+        }
 
         $stan->delete();
         return redirect('/');
@@ -164,11 +206,13 @@ class StanController extends Controller
 
 
 
-        
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'date-in' => 'required',
             'date-out' => 'required'
         ]);
+        if($validator->fails()){
+            return back()->withError('Unesite sva polja')->withInput();
+        }
 
         $datein =  request('date-in');
         $dateout =  request('date-out');
@@ -180,7 +224,7 @@ class StanController extends Controller
 
         if($id){
             if(request('date-in') < request('date-out') and  date('Y-m-d') < request('date-in')){
-               
+
 
                 foreach($ugovor as $ug)
                 {
@@ -189,7 +233,7 @@ class StanController extends Controller
 
                     if($inVal or $outVal)
                     {
-                        print('Stan je zauzet od '. $ug->datum_useljenja . ' do  '. $ug->datum_iseljenja);
+                        return back()->withError('Stan je zauzet od '. $ug->datum_useljenja . ' do  '. $ug->datum_iseljenja)->withInput();
                         $zauzet = TRUE;
                         break;
                     }
@@ -197,20 +241,20 @@ class StanController extends Controller
                 if(!$zauzet)
                 {
                     $ugovor = new Ugovor;
-                    $ugovor->datum_useljenja = request('date-in'); 
+                    $ugovor->datum_useljenja = request('date-in');
                     $ugovor->datum_iseljenja = request('date-out');
                     $ugovor->cijena_ugovora = $days * $stan->cijena_stana;
                     $ugovor->id_user = $id;
                     $ugovor->id_stan = $stan->id;
-                    
-                    $ugovor->save();
 
+                    $ugovor->save();
+                
                     return redirect('/show/'.$stan->id);
                 }
-              
+
 
             }else {
-                print('Unijeli ste stari datum ili vam je datum iseljenja veći od datuma iseljenja');
+                return back()->withError('Unijeli ste stari datum ili vam je datum iseljenja veći od datuma iseljenja')->withInput();
             }
         }else{
             return(redirect('login'));
@@ -221,19 +265,26 @@ class StanController extends Controller
         $stan = Stan::find($id);
         $id = Auth::id();
 
-        $this->validate($request, [
-            'review' => 'required'
+        $validator = Validator::make($request->all(), [
+            'review' => 'required',
+            'rating' => 'required'
         ]);
-
-        if($id){
-            $komentar = new Komentar;
-            $komentar->komentar = request('review');
-            $komentar->id_user = $id;
-            $komentar->id_stan = $stan->id; 
-
-            $komentar->save();
-
-            return redirect('/show/'.$stan->id);
+        if($validator->fails()){
+            return back()->withError('Unesite sva polja')->withInput();
+        } elseif(request('rating') > 10 || request('rating') < 1){
+            return back()->withError('Ocjena mora biti od 1 do 10.')->withInput();
+        } else{
+            if($id){
+                $komentar = new Komentar;
+                $komentar->komentar = request('review');
+                $komentar->ocjena = request('rating');
+                $komentar->id_user = $id;
+                $komentar->id_stan = $stan->id;
+    
+                $komentar->save();
+    
+                return redirect('/show/'.$stan->id);
+            } 
         }
     }
 }

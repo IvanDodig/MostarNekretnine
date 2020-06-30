@@ -48,20 +48,20 @@
         flex-direction: column;
         justify-content: space-around;
         transition: all 0.3s;
+        label {
+            margin-bottom: 1rem;
+        }
 
         input {
             border: 0;
             width: 100%;
             padding: 1rem 0.5rem;
             margin-bottom: 1rem;
-            border-right: none;
-            border-top: none;
-            border-left: none;
             border-bottom: 1px solid $grey-light-2;
-            background-color: transparent;
+            background-color: #e8f0fe;
             outline: none;
-            color: rgba(#000, 0.9);
-            caret-color: rgba(#000, 0.9);
+            color: $font-color;
+            caret-color: $font-color;
             transition: all 0.3s;
         }
         input:focus {
@@ -79,19 +79,11 @@
     flex: 1;
     .message--1 {
         font-size: 1.3rem;
-        margin-right: 1rem;
     }
-    .message--2 {
+    .message--2,
+    a {
         font-size: 1.7rem;
-        font-weight: bold;
-        text-decoration: underline;
-        transition: all 0.2s;
-        backface-visibility: hidden;
-        transform-origin: center;
-    }
-    .message--2:hover {
-        transform: scale(1.05);
-        color: #000;
+        color: $color-tertiary;
     }
 }
 

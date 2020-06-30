@@ -6,10 +6,10 @@
 		@csrf
 		<input type="hidden" name="token" value="{{ $token }}">
         <div class="form__login--row">
-            <div class="form__login--heading heading-2">Reset password</div>
+            <div class="form__login--heading heading-2">Resetiraj lozinku</div>
         </div>
         <div class="form__login--row">
-            <label for="email">E-mail Address</label>
+            <label for="email">E-mail Adresa</label>
         </div>
         <div class="form__login--row">
             <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@gmail.com">
@@ -20,19 +20,19 @@
             @enderror
         </div>
         <div class="form__login--row">
-            <label for="password">Password</label>
+            <label for="password">Lozinka</label>
         </div>
         <div class="form__login--row">
             <input id="password" type="password" name="password" required autocomplete="new-password" placeholder="********">
 		</div>
 		<div class="form__login--row">
-            <label for="password-confirm">Confirm password</label>
+            <label for="password-confirm">Potvrdi lozinku</label>
         </div>
         <div class="form__login--row">
             <input id="password-confirm" type="password" name="password-confirm" required autocomplete="new-password" placeholder="********">
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn-primary">{{ __('Reset Password') }}</button>
+            <button type="submit" class="btn-primary">{{ __('Resetiraj lozinku') }}</button>
         </div>
     </form>
 </div>

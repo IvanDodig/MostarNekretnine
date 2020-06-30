@@ -5,13 +5,13 @@
     <form action="{{ route('password.confirm') }}" method="POST" class="form__login">
 		@csrf
         <div class="form__login--row">
-            <div class="form__login--heading heading-2">Please confirm your password</div>
+            <div class="form__login--heading heading-2">Molimo potvrdite lozinku</div>
         </div>
         <div class="form__login--row">
-            <label for="password">Password</label>
+            <label for="password">Lozinka</label>
         </div>
         <div class="form__login--row">
-            <input id="password" type="password" name="password" required autocomplete="current-password" placeholder="********">
+            <input id="password" type="password" name="password" required autocomplete="current-password" >
 		</div>
         <div class="form__login--row">
             @error('password')
@@ -21,12 +21,12 @@
             @enderror
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn-primary">Confirm password</button>
+            <button type="submit" class="btn-primary">Potrdi lozinku</button>
         </div>
         <div class="form__login--row">
             @if (Route::has('password.request'))
                 <a class="btn-primary btn-primary--sec" href="{{ route('password.request') }}">
-                    {{ __('Forgot Your Password?') }}
+                    {{ __('Zaboravili ste lozinku?') }}
                 </a>
             @endif
         </div>

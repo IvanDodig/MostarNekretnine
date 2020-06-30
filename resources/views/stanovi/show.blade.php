@@ -30,10 +30,13 @@
                     <p>Naziv</p>
                     <span> {{$stan->naziv}} </span>
                 </div>
+                @if ($stan->internet)
                 <div class="details__desc--wifi">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.244c3.071-3.24 7.314-5.244 12-5.244 4.687 0 8.929 2.004 12 5.244l-2.039 2.15c-2.549-2.688-6.071-4.352-9.961-4.352s-7.412 1.664-9.961 4.352l-2.039-2.15zm5.72 6.034c1.607-1.696 3.827-2.744 6.28-2.744s4.673 1.048 6.28 2.744l2.093-2.208c-2.143-2.261-5.103-3.659-8.373-3.659s-6.23 1.398-8.373 3.659l2.093 2.208zm3.658 3.859c.671-.708 1.598-1.145 2.622-1.145 1.023 0 1.951.437 2.622 1.145l2.057-2.17c-1.197-1.263-2.851-2.044-4.678-2.044s-3.481.782-4.678 2.044l2.055 2.17zm2.622 1.017c-1.062 0-1.923.861-1.923 1.923s.861 1.923 1.923 1.923 1.923-.861 1.923-1.923-.861-1.923-1.923-1.923z"/></svg>
                     <span>{{$stan->internet}}</span>
                 </div>
+                @endif
+
                 <div class="details__desc--location">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
                     <span> {{$stan->lokacija}} </span>
@@ -80,27 +83,40 @@
                 <div class="form__login--row">
                     <input id="date-out" type="date" name="date-out" autofocus>
                 </div>
+                @if (session('error'))
+                    <div class="alert alert-danger" style="text-align: center; color: red;">{{ session('error') }}</div>
+                @endif
                 <div class="form__login--row">
                     <button type="submit" class="btn-primary">Rezerviraj</button>
                 </div>
+
+               
             </form>
         </div>
     </div>
     <form action="{{route('komentiraj',$stan->id)}}" method="POST" class="form__login form-details">
         @csrf
         <div class="form__login--row">
-            <label for="review">Leave a review!</label>
+            <label for="review">Ostavi komentar!</label>
         </div>
         <div class="form__login--row">
-            <textarea name="review" id="review" cols="9" rows="5"></textarea>
+            <textarea name="review" id="review" cols="9" rows="5" required></textarea>
         </div>
+        <div class="form__login--row form-rating">
+            <label for="review">Ocjena:</label>
+            <input type="number" name="rating" id="rating" placeholder="1-10" min="1" max="10" step="0.1"></input>
+        </div>
+
+        @if (session('error'))
+            <div class="alert alert-danger" style="text-align: center; color: red;">{{ session('error') }}</div>
+        @endif
         <div class="form__login--row">
-            <button type="submit" class="btn-primary">Send</button>
+            <button type="submit" class="btn-primary">Posalji</button>
         </div>
     </form>
 
 
-    <div class="details__bottom">
+    <div class="details__bottom ">
         {{-- PETLJA ZA KOMENTARE --}}
         @foreach ($komentari as $kom)
 
@@ -128,36 +144,6 @@
             </figure>
         @endforeach
         {{-- KRAJ PETLJE ZA KOMENTARE --}}
-
-
-        <figure class="review">
-            <figcaption class="review__user">
-                <img src="{{asset('img/user-1.jpg')}}" alt="">
-            </figcaption>
-            <div class="review__desc">
-                <blockquote class="review__desc--text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.
-                </blockquote>
-                <div class="review__desc--info">
-                    <div class="review__desc--name">Skiljo Skiljoni</div>
-                    <div class="review__desc--rating">9.2</div>
-                </div>
-            </div>
-        </figure>
-        <figure class="review">
-            <figcaption class="review__user">
-                <img src="{{asset('img/user-1.jpg')}}" alt="">
-            </figcaption>
-            <div class="review__desc">
-                <blockquote class="review__desc--text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.
-                </blockquote>
-                <div class="review__desc--info">
-                    <div class="review__desc--name">Skiljo Skiljoni</div>
-                    <div class="review__desc--rating">9.2</div>
-                </div>
-            </div>
-        </figure>
     </div>
 </section>
 

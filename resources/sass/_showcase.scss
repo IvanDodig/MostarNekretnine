@@ -4,7 +4,8 @@ main {
     padding: 7rem 5%;
     gap: 5rem;
     @media only screen and(max-width:$bp-smallest) {
-        padding: 5rem;
+        padding: 3rem;
+        padding-top: 5rem;
     }
 }
 
@@ -12,7 +13,7 @@ main {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 0.5fr));
     gap: 5rem;
-    padding: 5rem;
+    padding: 5rem 5%;
     align-items: center;
     justify-content: center;
     grid-column: 1 / -1;
@@ -66,7 +67,7 @@ main {
         justify-self: center;
         align-self: end;
         text-align: center;
-        z-index: 8;
+        z-index: 10;
         transform: translateY(50%);
     }
     &__location,

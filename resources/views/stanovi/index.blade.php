@@ -30,23 +30,24 @@
                     ?>
 
                         <img src="{{ asset('storage/fotografija/'.$rand_slika) }}"  alt="House 1">
+                        {{-- <img src="{{ asset('img/gal-1.jpeg') }}" alt="House 1"> --}}
 
                 @else
 
                         <img src="{{ asset('storage/fotografija/noimage.jpg') }}" alt="House 1">
+                        {{-- <img src="{{ asset('img/gal-1.jpeg') }}" alt="House 1"> --}}
 
                 @endif
                 <div class="home__name">{{ $stan->naziv}}</div>
-                <div class="home__location">Location</div>
-                <div class="home__price">Price</div>
-                <div class="home__area"> {{ $stan->lokacija }} </div>
-                <div class="home__rooms"> {{ $stan->cijena_stana }} KM/dan </div>
-                {{--  <a href="/stan/{{$stan->id}}">Stan {{$stan->id}} </a> --}}
-                <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}">Book Now </a>
+                <div class="home__location">{{ $stan->lokacija }}</div>
+                <div class="home__price">{{ $stan->cijena_stana }} KM/dan</div>
+                <div class="home__area"> {{ $stan->kvadratura }} &#13217;</div>
+                <div class="home__rooms"> {{ $stan->broj_soba }} sobe</div>
+                <a class="btn home__btn" href="{{ route('pogledaj',$stan->id) }}">Rezerviraj</a>
 
                 @hasrole(['admin','author'])
                 <div class="home__edit">
-                    <a class="btn-secondary home__btn--sec" href="{{ route('pogledaj',$stan->id) }}"> Uredi </a>
+                  {{--   <a class="btn-secondary home__btn--sec" href="{{ route('edit',$stan->id) }}"> Uredi </a> --}}
                     <form action="{{ route('izbrisi', $stan->id) }}" method="post" >
                         @csrf
                         <input type="hidden" name="_method" value="delete"/>
@@ -58,7 +59,7 @@
 
             </div>
         @endforeach
-
+    
     </div>
 
     <div class="pagination">

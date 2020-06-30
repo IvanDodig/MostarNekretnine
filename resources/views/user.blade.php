@@ -20,7 +20,7 @@
         </div>
 
         <div class="user-card__down">
-            Some details
+            Detalji
         </div>
 
     </div>
