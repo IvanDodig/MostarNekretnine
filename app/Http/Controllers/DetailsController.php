@@ -23,6 +23,6 @@ class DetailsController extends Controller
      */
     public function index()
     {
-        return view('details');
+        return view('user');
     }
 }
