@@ -3,26 +3,26 @@
 @section('content')
 
 
-{{--
+
 <div class="form">
     <form action="{{ route('register') }}" method="POST" class="form__login">
         @csrf
         <div class="form__login--row">
-            <div class="form__login--heading heading-2">Register</div>
+            <div class="form__login--heading heading-2">Registracija</div>
         </div>
         <div class="form__login--row">
-            <label for="email">Name</label>
-        </div>
-
-        <div class="form__login--row">
-            <input type="text" id="name" name="name" value="{{ old('email') }}" required autocomplete="name" autofocus placeholder="Your name">
-        </div>
-        <div class="form__login--row">
-            <label for="email">E-mail Address</label>
+            <label for="email">Ime</label>
         </div>
 
         <div class="form__login--row">
-            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="name@gmail.com">
+            <input type="text" id="name" name="name" value="{{ old('email') }}" required autocomplete="name" autofocus>
+        </div>
+        <div class="form__login--row">
+            <label for="email">E-mail Adresa</label>
+        </div>
+
+        <div class="form__login--row">
+            <input type="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" >
             @error('email')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
@@ -30,28 +30,26 @@
             @enderror
         </div>
         <div class="form__login--row">
-            <label for="password">Password</label>
+            <label for="password">Lozinka</label>
         </div>
         <div class="form__login--row">
-            <input id="password" type="password" name="password" required autocomplete="new-password" placeholder="********">
+            <input id="password" type="password" name="password" required autocomplete="new-password">
         </div>
         <div class="form__login--row">
-            <label for="password-confrim">Confirm password</label>
-
+            <label for="password-confirm">Potvrdi lozinku</label>
         </div>
         <div class="form__login--row">
-            <input id="password-confirm" type="password" name="password-confirmation" required autocomplete="new-password" placeholder="********">
+            <input id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password" >
         </div>
         <div class="form__login--row">
-            <button type="submit" class="btn btn--primary">Register</button>
+            <button type="submit" class="btn-primary">Register</button>
         </div>
         <div class="form__login--row form__login--bottom">
-            <span class="message--1">Dont have an account?</span>
-            <span class="message--2"><a href="{{ route('register') }}">Sign up!</a> </span>
+            <span class="message--2"><a href="{{ route('login') }}">Prijavi se!</a> </span>
         </div>
 
     </form>
-</div> --}}
+</div>
 
-<register></register>
+{{-- <register></register> --}}
 @endsection

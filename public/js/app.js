@@ -2092,6 +2092,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2138,6 +2149,19 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2258,7 +2282,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.error {\n    color: rgb(224, 43, 43);\n    font-size: 1.4rem;\n    margin-bottom: 1.5rem;\n}\n", ""]);
+exports.push([module.i, "\n.error {\r\n    color: rgb(224, 43, 43);\r\n    font-size: 1.4rem;\r\n    margin-bottom: 1.5rem;\n}\r\n", ""]);
 
 // exports
 
@@ -2277,7 +2301,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.error {\r\n\tcolor: #e02b2b;\r\n\tfont-size: 1.4rem;\r\n\tmargin-bottom: 1.5rem;\n}\n.invalid {\r\n\tborder-bottom: 1px solid #e02b2b !important;\n}\n.valid {\r\n\tborder-bottom: 1px solid #aaa;\n}\r\n", ""]);
+exports.push([module.i, "\n.error {\n    color: #e02b2b;\n    font-size: 1.4rem;\n    margin-bottom: 1.5rem;\n}\n.invalid {\n    border-bottom: 1px solid #e02b2b !important;\n}\n.valid {\n    border-bottom: 1px solid #aaa;\n}\n", ""]);
 
 // exports
 
@@ -3684,7 +3708,11 @@ var render = function() {
           _vm._v(" "),
           _vm.errors && _vm.errors.name
             ? _c("div", { staticClass: "error" }, [
-                _vm._v(_vm._s(_vm.errors.name[0]))
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.errors.name[0]) +
+                    "\n            "
+                )
               ])
             : _vm._e()
         ]),
@@ -3722,7 +3750,11 @@ var render = function() {
           _vm._v(" "),
           _vm.errors && _vm.errors.email
             ? _c("div", { staticClass: "error" }, [
-                _vm._v(_vm._s(_vm.errors.email[0]))
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.errors.email[0]) +
+                    "\n            "
+                )
               ])
             : _vm._e()
         ]),
@@ -3762,7 +3794,11 @@ var render = function() {
           _vm._v(" "),
           _vm.errors && _vm.errors.password
             ? _c("div", { staticClass: "error" }, [
-                _vm._v(_vm._s(_vm.errors.password[0]))
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.errors.password[0]) +
+                    "\n            "
+                )
               ])
             : _vm._e()
         ]),
@@ -3799,7 +3835,11 @@ var render = function() {
           _vm._v(" "),
           _vm.errors && _vm.errors.confirmPassword
             ? _c("div", { staticClass: "error" }, [
-                _vm._v(_vm._s(_vm.errors.confirmPassword[0]))
+                _vm._v(
+                  "\n                " +
+                    _vm._s(_vm.errors.confirmPassword[0]) +
+                    "\n            "
+                )
               ])
             : _vm._e()
         ]),
@@ -3851,7 +3891,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form__login--row" }, [
-      _c("label", { attrs: { for: "password-confrim" } }, [
+      _c("label", { attrs: { for: "password-confirm" } }, [
         _vm._v("Confirm password")
       ])
     ])
@@ -3945,14 +3985,14 @@ var render = function() {
                 })
               ]
             ),
-            _vm._v("\n\t\t\tFilter apartments\n\t\t")
+            _vm._v("\n            Filter apartments\n        ")
           ]
         )
       ]),
       _vm._v(" "),
       _c("transition", { attrs: { name: "slide", mode: "out-in" } }, [
         _c(
-          "div",
+          "form",
           {
             directives: [
               {
@@ -3964,58 +4004,59 @@ var render = function() {
             ],
             ref: "sidebar",
             staticClass: "sidebar",
-            class: { isVisible: _vm.visible }
+            class: { isVisible: _vm.visible },
+            attrs: { action: "" }
           },
           [
-            _c("form", { attrs: { action: "" } }, [
-              _c("div", { staticClass: "sidebar__item" }, [
-                _c("label", { attrs: { for: "price" } }, [_vm._v("Cijena")]),
-                _vm._v(" "),
-                _c("input", {
-                  attrs: {
-                    type: "number",
-                    id: "price",
-                    name: "odcijena",
-                    placeholder: "od"
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  attrs: {
-                    type: "number",
-                    id: "price",
-                    name: "docijena",
-                    placeholder: "do"
-                  }
-                })
-              ]),
+            _c("div", { staticClass: "sidebar__item" }, [
+              _c("label", { attrs: { for: "price" } }, [_vm._v("Cijena")]),
               _vm._v(" "),
-              _c("div", { staticClass: "sidebar__item" }, [
-                _c("label", { attrs: { for: "location" } }, [
-                  _vm._v("Lokacija")
-                ]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  { attrs: { name: "categories", id: "categories" } },
-                  [
-                    _c("option", { attrs: { value: "Hrvatske Mladeži" } }, [
-                      _vm._v("Hrvatske Mladeži")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Vukovarska" } }, [
-                      _vm._v("Vukovarska")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Splitska" } }, [
-                      _vm._v("Splitska")
-                    ])
-                  ]
-                )
-              ]),
+              _c("input", {
+                attrs: { type: "text", id: "price", name: "price" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "sidebar__item" }, [
+              _c("label", { attrs: { for: "name" } }, [_vm._v("Naziv stana")]),
               _vm._v(" "),
-              _c("div", { staticClass: "sidebar__item" }, [
-                _c("button", { attrs: { type: "submit" } }, [_vm._v("Traži")])
+              _c("input", { attrs: { type: "text", name: "name", id: "name" } })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "sidebar__item" }, [
+              _c("label", { attrs: { for: "location" } }, [_vm._v("Lokacija")]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "text", name: "location", id: "location" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "sidebar__item" }, [
+              _c(
+                "select",
+                { attrs: { name: "categories", id: "categories" } },
+                [
+                  _c("option", { attrs: { value: "Jednosoban" } }, [
+                    _vm._v("None")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Jednosoban" } }, [
+                    _vm._v("Jednosoban")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Jednosoban" } }, [
+                    _vm._v("Jednosoban")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Jednosoban" } }, [
+                    _vm._v("Jednosoban")
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "sidebar__item" }, [
+              _c("a", { staticClass: "btn", attrs: { href: "#" } }, [
+                _vm._v("Trazi")
               ])
             ])
           ]
@@ -16493,8 +16534,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\ivand\Desktop\MostarNekretnine-StanoviMostar\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\ivand\Desktop\MostarNekretnine-StanoviMostar\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\PC\Desktop\StanoviMostarMaster\MostarNekretnine\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\PC\Desktop\StanoviMostarMaster\MostarNekretnine\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
