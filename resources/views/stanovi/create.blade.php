@@ -14,15 +14,15 @@
         <div class="form__login--col">
             <div class="form__login--row">
                 <label for="name">Naziv stana</label>
-                <input type="text" name="naziv" id="name" autofocus placeholder="naziv" required>
+                <input type="text" name="naziv" id="name" autofocus required>
             </div>
             <div class="form__login--row">
                 <label for="price">Cijena stana</label>
-                <input type="number" name="cijena_stana" id="price" autofocus placeholder="cijena" required>
+                <input type="number" name="cijena_stana" id="price" autofocus required>
             </div>
             <div class="form__login--row">
                 <label for="location">Lokacija stana</label>
-                <input type="text" name="lokacija" id="location" autofocus placeholder="lokacija" required>
+                <input type="text" name="lokacija" id="location" autofocus required>
             </div>
 
         </div>
@@ -30,7 +30,7 @@
         <div class="form__login--col">
             <div class="form__login--row">
                 <label for="dimensions">Dimenzije</label>
-                <input type="number" name="kvadratura" id="dimensions" autofocus placeholder="50m2" required>
+                <input type="number" name="kvadratura" id="dimensions" autofocus placeholder="m2" required>
             </div>
             <div class="form__login--row">Internet</div>
             <div class="form__login--row radio-buttons">
@@ -47,7 +47,7 @@
             </div>
             <div class="form__login--row">
                 <label for="desc">Opis</label>
-                <input type="text" name="opis" id="desc" autofocus placeholder="Opis...">
+                <input type="text" name="opis" id="desc" autofocus>
             </div>
 
         </div>

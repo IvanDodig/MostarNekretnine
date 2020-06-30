@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 $color-primary: #212529;
-//$color-primary: #121314;
 $color-secondary: #6abe45;
 $color-tertiary: #0097e6;
 
@@ -125,8 +124,6 @@ body {
     background-color: $color-secondary;
     color: $grey-light-1;
 }
-
 a {
     text-decoration: none;
-    color: $grey-dark;
 }

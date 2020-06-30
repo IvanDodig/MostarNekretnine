@@ -1,11 +1,10 @@
 .user-container {
     height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .user-card {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -40%);
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -18,12 +17,21 @@
     padding: 1rem 2rem;
     min-width: 40vw;
     border: 1px solid $grey-light-2;
-    height: 50vh;
+    min-height: 50vh;
+    @media only screen and(max-width:$bp-medium) {
+        width: 60%;
+    }
+    @media only screen and(max-width:$bp-smallest) {
+        width: 75%;
+    }
     &__up {
         display: flex;
         width: 100%;
         justify-content: space-around;
         align-items: center;
+        @media only screen and(max-width:$bp-smallest) {
+            flex-direction: column;
+        }
     }
     &__down {
         width: 100%;
@@ -48,6 +56,7 @@
     }
 
     &__email {
+        align-self: center;
         font-size: 1.4rem;
     }
     &__details {

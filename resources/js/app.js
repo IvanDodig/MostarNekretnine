@@ -36,9 +36,11 @@ if (document.getElementById("photo")) {
 
     function showFileName(event) {
         const input = event.srcElement;
-        const fileName = input.files[0].name;
-        const p = document.createElement("p");
-        p.innerText = "Filename: " + fileName;
-        infoArea.appendChild(p);
+        if (input) {
+            const fileName = input.files[0].name;
+            const p = document.createElement("p");
+            p.innerText = "Filename: " + fileName;
+            infoArea.appendChild(p);
+        }
     }
 }

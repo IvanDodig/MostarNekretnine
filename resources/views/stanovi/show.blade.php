@@ -28,7 +28,7 @@
             <div class="details__desc-up">
                 <div class="details__desc--name">
                     <p>{{$stan->naziv}}</p>
-                    <span>ime</span>
+                    <span>Naziv</span>
                 </div>
                 @if ($stan->internet)
                 <div class="details__desc--wifi">
@@ -135,36 +135,6 @@
             </figure>
         @endforeach
         {{-- KRAJ PETLJE ZA KOMENTARE --}}
-
-{{--
-        <figure class="review">
-            <figcaption class="review__user">
-                <img src="{{asset('img/user-1.jpg')}}" alt="">
-            </figcaption>
-            <div class="review__desc">
-                <blockquote class="review__desc--text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.
-                </blockquote>
-                <div class="review__desc--info">
-                    <div class="review__desc--name">Skiljo Skiljoni</div>
-                    <div class="review__desc--rating">9.2</div>
-                </div>
-            </div>
-        </figure>
-        <figure class="review">
-            <figcaption class="review__user">
-                <img src="{{asset('img/user-1.jpg')}}" alt="">
-            </figcaption>
-            <div class="review__desc">
-                <blockquote class="review__desc--text">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing.
-                </blockquote>
-                <div class="review__desc--info">
-                    <div class="review__desc--name">Skiljo Skiljoni</div>
-                    <div class="review__desc--rating">9.2</div>
-                </div>
-            </div>
-        </figure> --}}
     </div>
 </section>
 
