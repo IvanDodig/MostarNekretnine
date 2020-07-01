@@ -43,8 +43,10 @@
             justify-content: flex-start;
             margin-top: 1.8rem;
             transition: all 0.3s;
-            i {
-                font-size: 2rem;
+            svg {
+                fill: #fff;
+                width: 2rem;
+                height: 2rem;
                 margin-right: 2.5rem;
             }
         }
@@ -109,15 +111,16 @@
             border-radius: 50%;
             transition: all 0.3s;
             cursor: pointer;
-            .fab {
-                color: #fff;
-                font-size: 1.7rem;
+            svg {
+                fill: #fff;
+                width: 2rem;
+                height: 1.5rem;
             }
         }
         & > *:hover {
             background: #fff;
-            .fab {
-                color: $color-primary;
+            svg {
+                fill: $color-primary;
             }
         }
     }

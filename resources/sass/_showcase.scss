@@ -112,8 +112,12 @@ main {
     a {
         padding: 1rem 2rem;
         border: 1px solid $grey-light-2;
-        i {
-            color: rgba($grey-dark, 0.7);
+
+        svg {
+            padding-top: 1.5rem;
+            fill: rgba($grey-dark, 0.7);
+            width: 2.5rem;
+            height: 3.5rem;
         }
     }
     a.active {

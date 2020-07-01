@@ -59,20 +59,18 @@
 
             </div>
         @endforeach
-    
+
     </div>
 
     <div class="pagination">
 
         <a href="{{ $stanovi->previousPageUrl() }}">
-            <i class="fas fa-arrow-left"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 12l9-8v6h15v4h-15v6z"/></svg>
         </a>
-
         <a href="#" class="active">{{ $stanovi->currentPage() }}</a>
 
         <a href="{{ $stanovi->nextPageUrl() }}">
-            <i class="fas fa-arrow-right"></i>
-
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12l-11-8v6h-13v4h13v6z"/></svg>
         </a>
     </div>
 </main>

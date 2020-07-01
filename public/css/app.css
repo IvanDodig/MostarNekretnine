@@ -6432,8 +6432,11 @@ main {
   border: 1px solid #d7dbdf;
 }
 
-.pagination a i {
-  color: rgba(53, 59, 72, 0.7);
+.pagination a svg {
+  padding-top: 1.5rem;
+  fill: rgba(53, 59, 72, 0.7);
+  width: 2.5rem;
+  height: 3.5rem;
 }
 
 .pagination a.active {
@@ -7461,10 +7464,12 @@ input[type=radio]:checked ~ label {
   transition: all 0.3s;
 }
 
-.footer__up--location i,
-.footer__up--mail i,
-.footer__up--phone i {
-  font-size: 2rem;
+.footer__up--location svg,
+.footer__up--mail svg,
+.footer__up--phone svg {
+  fill: #fff;
+  width: 2rem;
+  height: 2rem;
   margin-right: 2.5rem;
 }
 
@@ -7538,17 +7543,18 @@ input[type=radio]:checked ~ label {
   cursor: pointer;
 }
 
-.footer__mid > * .fab {
-  color: #fff;
-  font-size: 1.7rem;
+.footer__mid > * svg {
+  fill: #fff;
+  width: 2rem;
+  height: 1.5rem;
 }
 
 .footer__mid > *:hover {
   background: #fff;
 }
 
-.footer__mid > *:hover .fab {
-  color: #212529;
+.footer__mid > *:hover svg {
+  fill: #212529;
 }
 
 .footer__down {
